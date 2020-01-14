@@ -1795,25 +1795,6 @@ void SAL_CALL ScXMLImport::endDocument()
             }
         }
 
-        // There are rows with optimal height which need to be updated
-        if (pDoc && !maRecalcRowRanges.empty())
-        {
-            bool bLockHeight = pDoc->IsAdjustHeightLocked();
-            if (bLockHeight)
-            {
-                pDoc->UnlockAdjustHeight();
-            }
-
-            ScSizeDeviceProvider aProv(static_cast<ScDocShell*>(pDoc->GetDocumentShell()));
-            ScDocRowHeightUpdater aUpdater(*pDoc, aProv.GetDevice(), aProv.GetPPTX(), aProv.GetPPTY(), &maRecalcRowRanges);
-            aUpdater.update();
-
-            if (bLockHeight)
-            {
-                pDoc->LockAdjustHeight();
-            }
-        }
-
         aTables.FixupOLEs();
     }
     if (GetModel().is())
