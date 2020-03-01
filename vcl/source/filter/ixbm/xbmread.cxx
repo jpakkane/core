@@ -34,7 +34,7 @@ enum XBMFormat
     XBM11
 };
 
-enum ReadState
+enum ReadState2
 {
     XBMREAD_OK,
     XBMREAD_ERROR,
@@ -64,7 +64,7 @@ public:
 
     explicit        XBMReader( SvStream& rStm );
 
-    ReadState       ReadXBM( Graphic& rGraphic );
+    ReadState2       ReadXBM( Graphic& rGraphic );
 };
 
 }
@@ -265,9 +265,9 @@ void XBMReader::ParseData( SvStream* pInStm, const OString& aLastLine, XBMFormat
     }
 }
 
-ReadState XBMReader::ReadXBM( Graphic& rGraphic )
+ReadState2 XBMReader::ReadXBM( Graphic& rGraphic )
 {
-    ReadState   eReadState;
+    ReadState2   eReadState;
     sal_uInt8       cDummy;
 
     // check if we can read ALL
@@ -377,7 +377,7 @@ VCL_DLLPUBLIC bool ImportXBM( SvStream& rStm, Graphic& rGraphic )
 
     bool bRet = true;
 
-    ReadState eReadState = pXBMReader->ReadXBM( rGraphic );
+    ReadState2 eReadState = pXBMReader->ReadXBM( rGraphic );
 
     if( eReadState == XBMREAD_ERROR )
     {

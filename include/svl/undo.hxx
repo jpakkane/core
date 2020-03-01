@@ -64,14 +64,14 @@ public:
     /// ID of the view shell that created this undo action.
     virtual ViewShellId GetViewShellId() const;
     /// Timestamp when this undo item was created.
-    const DateTime& GetDateTime() const;
+    const ::DateTime& GetDateTime() const;
     virtual void dumpAsXml(xmlTextWriterPtr pWriter) const;
 
 private:
     SfxUndoAction( const SfxUndoAction& ) = delete;
     SfxUndoAction& operator=( const SfxUndoAction& ) = delete;
 
-    DateTime m_aDateTime;
+    ::DateTime m_aDateTime;
 };
 
 

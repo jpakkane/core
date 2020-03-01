@@ -97,7 +97,7 @@ namespace sdr
             basegfx::B2DRange                               maBaseRange;
 
             // base color of this OverlayObject
-            Color                                           maBaseColor;
+            ::Color                                           maBaseColor;
 
             // Flag for visibility
             bool                                            mbIsVisible : 1;
@@ -126,7 +126,7 @@ namespace sdr
             void allowAntiAliase(bool bNew);
 
         public:
-            explicit OverlayObject(Color aBaseColor);
+            explicit OverlayObject(::Color aBaseColor);
             virtual ~OverlayObject() override;
 
             // get OverlayManager
@@ -153,8 +153,8 @@ namespace sdr
             const basegfx::B2DRange& getBaseRange() const;
 
             // access to baseColor
-            const Color& getBaseColor() const { return maBaseColor; }
-            void setBaseColor(Color aNew);
+            const ::Color& getBaseColor() const { return maBaseColor; }
+            void setBaseColor(::Color aNew);
 
             // access to Offset
             const basegfx::B2DVector& getOffset() const { return maOffset; }
@@ -191,7 +191,7 @@ namespace sdr
             basegfx::B2DPoint                       maBasePosition;
 
         public:
-            OverlayObjectWithBasePosition(const basegfx::B2DPoint& rBasePos, Color aBaseColor);
+            OverlayObjectWithBasePosition(const basegfx::B2DPoint& rBasePos, ::Color aBaseColor);
             virtual ~OverlayObjectWithBasePosition() override;
 
             // access to basePosition

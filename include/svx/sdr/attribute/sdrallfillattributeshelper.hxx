@@ -48,7 +48,7 @@ namespace drawinglayer
                 const basegfx::B2DRange& rDefineRange);
 
         public:
-            SdrAllFillAttributesHelper(const Color& rColor);
+            SdrAllFillAttributesHelper(const ::Color& rColor);
             SdrAllFillAttributesHelper(const SfxItemSet& rSet);
             ~SdrAllFillAttributesHelper();
 

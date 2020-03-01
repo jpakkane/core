@@ -53,7 +53,7 @@ VCL_DLLPUBLIC size_t ImportPDF(const OUString& rURL, std::vector<Bitmap>& rBitma
 /// Does not set rPdfData if no conversion is done.
 /// Returns the number of pages read.
 VCL_DLLPUBLIC size_t ImportPDFUnloaded(const OUString& rURL,
-                                       std::vector<std::pair<Graphic, Size>>& rGraphics,
+                                       std::vector<std::pair<Graphic, ::Size>>& rGraphics,
                                        double fResolutionDPI = 96.);
 }
 

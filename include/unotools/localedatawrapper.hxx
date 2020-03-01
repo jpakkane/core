@@ -321,7 +321,7 @@ public:
     DateOrder          getDateOrder() const;
     DateOrder          getLongDateOrder() const;
     /// only numerical values of Gregorian calendar
-    OUString       getDate( const Date& rDate ) const;
+    OUString       getDate( const ::Date& rDate ) const;
     OUString       getTime( const tools::Time& rTime, bool bSec = true,
                             bool b100Sec = false ) const;
     OUString       getDuration( const tools::Time& rTime,
@@ -333,7 +333,7 @@ public:
                                 <FALSE/> := full year
                                 <TRUE/>  := year % 100
                          */
-    OUString       getLongDate( const Date& rDate,
+    OUString       getLongDate( const ::Date& rDate,
                             CalendarWrapper& rCal,
                             bool bTwoDigitYear
                             ) const;

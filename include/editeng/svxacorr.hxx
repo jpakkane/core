@@ -170,7 +170,7 @@ class EDITENG_DLLPUBLIC SvxAutoCorrectLanguageLists
 {
     OUString sShareAutoCorrFile, sUserAutoCorrFile;
     // If the AutoCorr file is newer
-    Date aModifiedDate;
+    ::Date aModifiedDate;
     tools::Time aModifiedTime, aLastCheckTime;
 
     std::unique_ptr<SvStringsISortDtor> pCplStt_ExcptLst;

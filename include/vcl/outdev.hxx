@@ -283,7 +283,7 @@ enum class OutDevViewType { DontKnow, PrintPreview, SlideShow };
 
 typedef tools::SvRef<FontCharMap> FontCharMapRef;
 
-BmpMirrorFlags AdjustTwoRect( SalTwoRect& rTwoRect, const Size& rSizePix );
+BmpMirrorFlags AdjustTwoRect( SalTwoRect& rTwoRect, const ::Size& rSizePix );
 void AdjustTwoRect( SalTwoRect& rTwoRect, const tools::Rectangle& rValidSrcRect );
 
 class OutputDevice;
@@ -426,7 +426,7 @@ public:
     /// Create surface with given dimensions
     cairo::SurfaceSharedPtr     CreateSurface(int x, int y, int width, int height) const;
     /// Create Surface for given bitmap data
-    cairo::SurfaceSharedPtr     CreateBitmapSurface(const BitmapSystemData& rData, const Size& rSize) const;
+    cairo::SurfaceSharedPtr     CreateBitmapSurface(const BitmapSystemData& rData, const ::Size& rSize) const;
     /// Return native handle for underlying surface
     css::uno::Any               GetNativeSurfaceHandle(cairo::SurfaceSharedPtr& rSurface, const basegfx::B2ISize& rSize) const;
     css::uno::Any               GetSystemGfxDataAny() const;
@@ -438,8 +438,8 @@ public:
 
     virtual sal_uInt16          GetBitCount() const;
 
-    Size                        GetOutputSizePixel() const
-                                    { return Size( mnOutWidth, mnOutHeight ); }
+    ::Size                        GetOutputSizePixel() const
+                                    { return ::Size( mnOutWidth, mnOutHeight ); }
     long                        GetOutputWidthPixel() const { return mnOutWidth; }
     long                        GetOutputHeightPixel() const { return mnOutHeight; }
     long                        GetOutOffXPixel() const { return mnOutOffX; }
@@ -447,7 +447,7 @@ public:
     void                        SetOutOffXPixel(long nOutOffX);
     void                        SetOutOffYPixel(long nOutOffY);
 
-    Size                        GetOutputSize() const
+    ::Size                        GetOutputSize() const
                                     { return PixelToLogic( GetOutputSizePixel() ); }
 
     css::uno::Reference< css::awt::XGraphics >
@@ -542,17 +542,17 @@ public:
     virtual void                Flush() {}
 
     virtual void                DrawOutDev(
-                                    const Point& rDestPt, const Size& rDestSize,
-                                    const Point& rSrcPt,  const Size& rSrcSize );
+                                    const Point& rDestPt, const ::Size& rDestSize,
+                                    const Point& rSrcPt,  const ::Size& rSrcSize );
 
     virtual void                DrawOutDev(
-                                    const Point& rDestPt, const Size& rDestSize,
-                                    const Point& rSrcPt,  const Size& rSrcSize,
+                                    const Point& rDestPt, const ::Size& rDestSize,
+                                    const Point& rSrcPt,  const ::Size& rSrcSize,
                                     const OutputDevice& rOutDev );
 
     virtual void                CopyArea(
                                     const Point& rDestPt,
-                                    const Point& rSrcPt,  const Size& rSrcSize,
+                                    const Point& rSrcPt,  const ::Size& rSrcSize,
                                     bool bWindowInvalidate = false );
 
 protected:
@@ -566,7 +566,7 @@ protected:
 private:
 
     // not implemented; to detect misuses of DrawOutDev(...OutputDevice&);
-    SAL_DLLPRIVATE void         DrawOutDev( const Point&, const Size&, const Point&,  const Size&, const Printer&) = delete;
+    SAL_DLLPRIVATE void         DrawOutDev( const Point&, const ::Size&, const Point&,  const ::Size&, const Printer&) = delete;
     ///@}
 
 
@@ -626,7 +626,7 @@ public:
     void                        SetBackground();
     void                        SetBackground( const Wallpaper& rBackground );
     virtual void                SaveBackground(VirtualDevice& rSaveDevice,
-                                               const Point& rPos, const Size& rSize, const Size& rBackgroundSize) const;
+                                               const Point& rPos, const ::Size& rSize, const ::Size& rBackgroundSize) const;
 
     const Wallpaper&            GetBackground() const { return maBackground; }
     virtual Color               GetBackgroundColor() const;
@@ -713,12 +713,12 @@ public:
     /// Fill the given rectangle with checkered rectangles of size nLen x nLen using the colors aStart and aEnd
     void                        DrawCheckered(
                                     const Point& rPos,
-                                    const Size& rSize,
+                                    const ::Size& rSize,
                                     sal_uInt32 nLen = 8,
                                     Color aStart = COL_WHITE,
                                     Color aEnd = COL_BLACK);
 
-    void                        DrawGrid( const tools::Rectangle& rRect, const Size& rDist, DrawGridFlags nFlags );
+    void                        DrawGrid( const tools::Rectangle& rRect, const ::Size& rDist, DrawGridFlags nFlags );
 
     ///@}
 
@@ -934,7 +934,7 @@ public:
 
 private:
 
-    SAL_DLLPRIVATE void         CalcHatchValues( const tools::Rectangle& rRect, long nDist, sal_uInt16 nAngle10, Point& rPt1, Point& rPt2, Size& rInc, Point& rEndPt1 );
+    SAL_DLLPRIVATE void         CalcHatchValues( const tools::Rectangle& rRect, long nDist, sal_uInt16 nAngle10, Point& rPt1, Point& rPt2, ::Size& rInc, Point& rEndPt1 );
     SAL_DLLPRIVATE void         DrawHatchLine( const tools::Line& rLine, const tools::PolyPolygon& rPolyPoly, Point* pPtBuffer, bool bMtf );
     ///@}
 
@@ -1208,7 +1208,7 @@ public:
 
     bool                        IsFontAvailable( const OUString& rFontName ) const;
 
-    Size                        GetDevFontSize( const vcl::Font& rFont, int nSizeIndex ) const;
+    ::Size                        GetDevFontSize( const vcl::Font& rFont, int nSizeIndex ) const;
     int                         GetDevFontSizeCount( const vcl::Font& ) const;
 
     bool                        AddTempDevFont( const OUString& rFileURL, const OUString& rFontName );
@@ -1388,14 +1388,14 @@ public:
       */
     void                        DrawBitmap(
                                     const Point& rDestPt,
-                                    const Size& rDestSize,
+                                    const ::Size& rDestSize,
                                     const Bitmap& rBitmap );
 
     void                        DrawBitmap(
                                     const Point& rDestPt,
-                                    const Size& rDestSize,
+                                    const ::Size& rDestSize,
                                     const Point& rSrcPtPixel,
-                                    const Size& rSrcSizePixel,
+                                    const ::Size& rSrcSizePixel,
                                     const Bitmap& rBitmap,
                                     MetaActionType nAction = MetaActionType::BMPSCALEPART );
 
@@ -1424,14 +1424,14 @@ public:
      */
     void                        DrawBitmapEx(
                                     const Point& rDestPt,
-                                    const Size& rDestSize,
+                                    const ::Size& rDestSize,
                                     const BitmapEx& rBitmapEx );
 
     void                        DrawBitmapEx(
                                     const Point& rDestPt,
-                                    const Size& rDestSize,
+                                    const ::Size& rDestSize,
                                     const Point& rSrcPtPixel,
-                                    const Size& rSrcSizePixel,
+                                    const ::Size& rSrcSizePixel,
                                     const BitmapEx& rBitmapEx,
                                     MetaActionType nAction = MetaActionType::BMPEXSCALEPART );
 
@@ -1449,16 +1449,16 @@ public:
 
     void                        DrawImage(
                                     const Point& rPos,
-                                    const Size& rSize,
+                                    const ::Size& rSize,
                                     const Image& rImage,
                                     DrawImageFlags nStyle = DrawImageFlags::NONE );
 
 
-    virtual Bitmap              GetBitmap( const Point& rSrcPt, const Size& rSize ) const;
+    virtual Bitmap              GetBitmap( const Point& rSrcPt, const ::Size& rSize ) const;
 
     /** Query extended bitmap (with alpha channel, if available).
      */
-    BitmapEx                    GetBitmapEx( const Point& rSrcPt, const Size& rSize ) const;
+    BitmapEx                    GetBitmapEx( const Point& rSrcPt, const ::Size& rSize ) const;
 
 
     /** Draw BitmapEx transformed
@@ -1481,8 +1481,8 @@ public:
 protected:
 
     virtual void                DrawDeviceBitmap(
-                                    const Point& rDestPt, const Size& rDestSize,
-                                    const Point& rSrcPtPixel, const Size& rSrcSizePixel,
+                                    const Point& rDestPt, const ::Size& rDestSize,
+                                    const Point& rSrcPtPixel, const ::Size& rSrcSizePixel,
                                     BitmapEx& rBitmapEx );
 
     virtual void                ScaleBitmap ( Bitmap &rBmp, SalTwoRect &rPosAry );
@@ -1520,14 +1520,14 @@ private:
                                     const Bitmap& rBmp,
                                     const AlphaMask& rAlpha,
                                     const Point& rDestPt,
-                                    const Size& rDestSize,
+                                    const ::Size& rDestSize,
                                     const Point& rSrcPtPixel,
-                                    const Size& rSrcSizePixel );
+                                    const ::Size& rSrcSizePixel );
 
     SAL_DLLPRIVATE void DrawDeviceAlphaBitmapSlowPath(
                                 const Bitmap& rBitmap, const AlphaMask& rAlpha,
                                 tools::Rectangle aDstRect, tools::Rectangle aBmpRect,
-                                Size const & aOutSz, Point const & aOutPt);
+                                ::Size const & aOutSz, Point const & aOutPt);
 
 
     SAL_DLLPRIVATE void         BlendBitmap(
@@ -1543,7 +1543,7 @@ private:
                                     const sal_Int32     nOffX,
                                     const sal_Int32     nDstWidth,
                                     const tools::Rectangle&    aBmpRect,
-                                    const Size&         aOutSz,
+                                    const ::Size&         aOutSz,
                                     const bool          bHMirr,
                                     const bool          bVMirr,
                                     const long*         pMapX,
@@ -1567,9 +1567,9 @@ private:
         mirroring must happen outside this method (e.g. in DrawBitmap)
      */
     SAL_DLLPRIVATE Bitmap       GetDownsampledBitmap(
-                                    const Size& rDstSz,
+                                    const ::Size& rDstSz,
                                     const Point& rSrcPt,
-                                    const Size& rSrcSz,
+                                    const ::Size& rSrcSz,
                                     const Bitmap& rBmp,
                                     long nMaxBmpDPIX,
                                     long nMaxBmpDPIY );
@@ -1603,8 +1603,8 @@ public:
 
     SAL_DLLPRIVATE void         ImplPrintTransparent (
                                     const Bitmap& rBmp, const Bitmap& rMask,
-                                    const Point& rDestPt, const Size& rDestSize,
-                                    const Point& rSrcPtPixel, const Size& rSrcSizePixel );
+                                    const Point& rDestPt, const ::Size& rDestSize,
+                                    const Point& rSrcPtPixel, const ::Size& rSrcSizePixel );
 
     SAL_DLLPRIVATE Color        ImplDrawModeToColor  ( const Color& rColor ) const;
 
@@ -1617,7 +1617,7 @@ public:
                                     double fTransparency);
 
     void                        DrawTransparent(
-                                        const GDIMetaFile& rMtf, const Point& rPos, const Size& rSize,
+                                        const GDIMetaFile& rMtf, const Point& rPos, const ::Size& rSize,
                                         const Gradient& rTransparenceGradient );
 
 protected:
@@ -1642,11 +1642,11 @@ public:
     void                        DrawMask( const Point& rDestPt,
                                           const Bitmap& rBitmap, const Color& rMaskColor );
 
-    void                        DrawMask( const Point& rDestPt, const Size& rDestSize,
+    void                        DrawMask( const Point& rDestPt, const ::Size& rDestSize,
                                           const Bitmap& rBitmap, const Color& rMaskColor );
 
-    void                        DrawMask( const Point& rDestPt, const Size& rDestSize,
-                                          const Point& rSrcPtPixel, const Size& rSrcSizePixel,
+    void                        DrawMask( const Point& rDestPt, const ::Size& rDestSize,
+                                          const Point& rSrcPtPixel, const ::Size& rSrcSizePixel,
                                           const Bitmap& rBitmap, const Color& rMaskColor,
                                           MetaActionType nAction );
 
@@ -1654,8 +1654,8 @@ protected:
 
     virtual void                DrawDeviceMask (
                                          const Bitmap& rMask, const Color& rMaskColor,
-                                         const Point& rDestPt, const Size& rDestSize,
-                                         const Point& rSrcPtPixel, const Size& rSrcSizePixel );
+                                         const Point& rDestPt, const ::Size& rDestSize,
+                                         const Point& rSrcPtPixel, const ::Size& rSrcSizePixel );
     ///@}
 
 
@@ -1707,7 +1707,7 @@ public:
         @param rOffset
         The offset in pixel
      */
-    void                        SetPixelOffset( const Size& rOffset );
+    void                        SetPixelOffset( const ::Size& rOffset );
 
     /** Get the offset in pixel
 
@@ -1715,10 +1715,10 @@ public:
 
         @return the current offset in pixel
      */
-    Size                        GetPixelOffset() const { return Size(mnOutOffOrigX, mnOutOffOrigY);}
+    ::Size                        GetPixelOffset() const { return ::Size(mnOutOffOrigX, mnOutOffOrigY);}
 
     Point                       LogicToPixel( const Point& rLogicPt ) const;
-    Size                        LogicToPixel( const Size& rLogicSize ) const;
+    ::Size                        LogicToPixel( const ::Size& rLogicSize ) const;
     tools::Rectangle                   LogicToPixel( const tools::Rectangle& rLogicRect ) const;
     tools::Polygon              LogicToPixel( const tools::Polygon& rLogicPoly ) const;
     tools::PolyPolygon          LogicToPixel( const tools::PolyPolygon& rLogicPolyPoly ) const;
@@ -1726,7 +1726,7 @@ public:
     vcl::Region                 LogicToPixel( const vcl::Region& rLogicRegion )const;
     Point                       LogicToPixel( const Point& rLogicPt,
                                               const MapMode& rMapMode ) const;
-    Size                        LogicToPixel( const Size& rLogicSize,
+    ::Size                        LogicToPixel( const ::Size& rLogicSize,
                                               const MapMode& rMapMode ) const;
     tools::Rectangle                   LogicToPixel( const tools::Rectangle& rLogicRect,
                                               const MapMode& rMapMode ) const;
@@ -1736,7 +1736,7 @@ public:
                                               const MapMode& rMapMode ) const;
 
     Point                       PixelToLogic( const Point& rDevicePt ) const;
-    Size                        PixelToLogic( const Size& rDeviceSize ) const;
+    ::Size                        PixelToLogic( const ::Size& rDeviceSize ) const;
     tools::Rectangle                   PixelToLogic( const tools::Rectangle& rDeviceRect ) const;
     tools::Polygon              PixelToLogic( const tools::Polygon& rDevicePoly ) const;
     tools::PolyPolygon          PixelToLogic( const tools::PolyPolygon& rDevicePolyPoly ) const;
@@ -1744,7 +1744,7 @@ public:
     vcl::Region                 PixelToLogic( const vcl::Region& rDeviceRegion ) const;
     Point                       PixelToLogic( const Point& rDevicePt,
                                               const MapMode& rMapMode ) const;
-    Size                        PixelToLogic( const Size& rDeviceSize,
+    ::Size                        PixelToLogic( const ::Size& rDeviceSize,
                                               const MapMode& rMapMode ) const;
     tools::Rectangle                   PixelToLogic( const tools::Rectangle& rDeviceRect,
                                               const MapMode& rMapMode ) const;
@@ -1758,7 +1758,7 @@ public:
     Point                       LogicToLogic( const Point&      rPtSource,
                                               const MapMode*    pMapModeSource,
                                               const MapMode*    pMapModeDest ) const;
-    Size                        LogicToLogic( const Size&       rSzSource,
+    ::Size                        LogicToLogic( const ::Size&       rSzSource,
                                               const MapMode*    pMapModeSource,
                                               const MapMode*    pMapModeDest ) const;
     tools::Rectangle                   LogicToLogic( const tools::Rectangle&  rRectSource,
@@ -1767,7 +1767,7 @@ public:
     static Point                LogicToLogic( const Point&      rPtSource,
                                               const MapMode&    rMapModeSource,
                                               const MapMode&    rMapModeDest );
-    static Size                 LogicToLogic( const Size&       rSzSource,
+    static ::Size                 LogicToLogic( const ::Size&       rSzSource,
                                               const MapMode&    rMapModeSource,
                                               const MapMode&    rMapModeDest );
     static tools::Rectangle            LogicToLogic( const tools::Rectangle&  rRectSource,
@@ -1892,7 +1892,7 @@ public:
 
      @returns Physical size on the device.
      */
-    SAL_DLLPRIVATE Size         ImplLogicToDevicePixel( const Size& rLogicSize ) const;
+    SAL_DLLPRIVATE ::Size         ImplLogicToDevicePixel( const ::Size& rLogicSize ) const;
 
     /** Convert a rectangle in physical pixel units to a rectangle in physical pixel units and coords.
 
@@ -2002,7 +2002,7 @@ public:
         would then need to be supported for Mac and PS printers, but
         that's too much for now, wrote \#i107046# for this */
     bool                        DrawEPS(
-                                    const Point& rPt, const Size& rSz,
+                                    const Point& rPt, const ::Size& rSz,
                                     const GfxLink& rGfxLink, GDIMetaFile* pSubst = nullptr );
     ///@}
 };

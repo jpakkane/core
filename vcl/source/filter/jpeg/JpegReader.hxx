@@ -26,7 +26,7 @@
 
 enum class GraphicFilterImportFlags;
 
-enum ReadState
+enum ReadState3
 {
     JPEGREAD_OK,
     JPEGREAD_ERROR,
@@ -60,7 +60,7 @@ public:
             JPEGReader( SvStream& rStream, GraphicFilterImportFlags nImportFlags );
     virtual ~JPEGReader() override;
 
-    ReadState Read(Graphic& rGraphic, GraphicFilterImportFlags nImportFlags, BitmapScopedWriteAccess* ppAccess);
+    ReadState3 Read(Graphic& rGraphic, GraphicFilterImportFlags nImportFlags, BitmapScopedWriteAccess* ppAccess);
 
     bool CreateBitmap(JPEGCreateBitmapParam const & param);
 

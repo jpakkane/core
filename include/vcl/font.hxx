@@ -49,9 +49,9 @@ public:
     explicit            Font();
                         Font( const Font& ); // TODO make me explicit
                         Font( Font&& ) noexcept;
-    explicit            Font( const OUString& rFamilyName, const Size& );
-    explicit            Font( const OUString& rFamilyName, const OUString& rStyleName, const Size& );
-    explicit            Font( FontFamily eFamily, const Size& );
+    explicit            Font( const OUString& rFamilyName, const ::Size& );
+    explicit            Font( const OUString& rFamilyName, const OUString& rStyleName, const ::Size& );
+    explicit            Font( FontFamily eFamily, const ::Size& );
     virtual             ~Font();
 
     const OUString&     GetFamilyName() const;
@@ -104,8 +104,8 @@ public:
 
     void                SetTransparent( bool bTransparent );
 
-    void                SetFontSize( const Size& );
-    const Size&         GetFontSize() const;
+    void                SetFontSize( const ::Size& );
+    const ::Size&         GetFontSize() const;
     void                SetFontHeight( long nHeight );
     long                GetFontHeight() const;
     void                SetAverageFontWidth( long nWidth );

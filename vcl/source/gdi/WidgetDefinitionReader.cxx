@@ -19,7 +19,7 @@ namespace vcl
 {
 namespace
 {
-bool lcl_fileExists(OUString const& sFilename)
+bool lcl_fileExists2(OUString const& sFilename)
 {
     osl::File aFile(sFilename);
     osl::FileBase::RC eRC = aFile.open(osl_File_OpenFlag_Read);
@@ -359,7 +359,7 @@ void WidgetDefinitionReader::readPart(tools::XmlWalker& rWalker,
 
 bool WidgetDefinitionReader::read(WidgetDefinition& rWidgetDefinition)
 {
-    if (!lcl_fileExists(m_rDefinitionFile))
+    if (!lcl_fileExists2(m_rDefinitionFile))
         return false;
 
     auto pStyle = std::make_shared<WidgetDefinitionStyle>();

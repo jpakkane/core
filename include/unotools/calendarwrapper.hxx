@@ -44,7 +44,7 @@ class UNOTOOLS_DLLPUBLIC CalendarWrapper
 {
     css::uno::Reference< css::i18n::XCalendar4 >   xC;
 
-    const DateTime aEpochStart;        // 1Jan1970
+    const ::DateTime aEpochStart;        // 1Jan1970
 
 public:
                                 CalendarWrapper(
@@ -120,11 +120,11 @@ public:
     // convenience methods
 
     /// get epoch start (should be 01Jan1970)
-    const DateTime&     getEpochStart() const
+    const ::DateTime&     getEpochStart() const
                                     { return aEpochStart; }
 
     /// set a local (!) Gregorian DateTime
-    void                setGregorianDateTime( const DateTime& rDateTime )
+    void                setGregorianDateTime( const ::DateTime& rDateTime )
                                     { setLocalDateTime( rDateTime - aEpochStart ); }
 
 };

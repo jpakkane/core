@@ -184,12 +184,12 @@ IconThemeScanner::GetStandardIconThemePath()
 
 namespace
 {
-    class SameTheme
+    class SameTheme2
     {
     private:
         const OUString& m_rThemeId;
     public:
-        explicit SameTheme(const OUString &rThemeId) : m_rThemeId(rThemeId) {}
+        explicit SameTheme2(const OUString &rThemeId) : m_rThemeId(rThemeId) {}
         bool operator()(const vcl::IconThemeInfo &rInfo)
         {
             return m_rThemeId == rInfo.GetThemeId();
@@ -201,7 +201,7 @@ const vcl::IconThemeInfo&
 IconThemeScanner::GetIconThemeInfo(const OUString& themeId)
 {
     std::vector<IconThemeInfo>::iterator info = std::find_if(mFoundIconThemes.begin(), mFoundIconThemes.end(),
-        SameTheme(themeId));
+        SameTheme2(themeId));
     if (info == mFoundIconThemes.end()) {
         SAL_WARN("vcl.app", "Requested information for icon theme with id '" << themeId
                 << "' which does not exist.");

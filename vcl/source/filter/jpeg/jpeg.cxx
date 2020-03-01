@@ -45,7 +45,7 @@ VCL_DLLPUBLIC bool ImportJPEG( SvStream& rInputStream, Graphic& rGraphic, Graphi
         pJPEGReader->DisablePreviewMode();
     }
 
-    ReadState eReadState = pJPEGReader->Read( rGraphic, nImportFlags, ppAccess );
+    ReadState3 eReadState = pJPEGReader->Read( rGraphic, nImportFlags, ppAccess );
 
     if( eReadState == JPEGREAD_ERROR )
     {

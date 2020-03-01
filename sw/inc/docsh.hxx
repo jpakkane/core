@@ -251,7 +251,7 @@ public:
                                    sal_Int32 nFileFormat,
                                    bool bTemplate = false ) const override;
 
-    virtual std::set<Color> GetDocColors() override;
+    virtual std::set<::Color> GetDocColors() override;
     sfx::AccessibilityIssueCollection runAccessibilityCheck() override;
 
     virtual void LoadStyles( SfxObjectShell& rSource ) override;

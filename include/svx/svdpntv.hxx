@@ -217,7 +217,7 @@ public:
 
 protected:
     svtools::ColorConfig            maColorConfig;
-    Color                           maGridColor;
+    ::Color                           maGridColor;
 
     // Interface to SdrPaintWindow
     void DeletePaintWindow(SdrPaintWindow& rOld);
@@ -385,7 +385,7 @@ public:
     /// Draw Help line in front of the objects or behind them
     bool IsHlplFront() const { return mbHlplFront  ; }
 
-    const Color& GetGridColor() const { return maGridColor;}
+    const ::Color& GetGridColor() const { return maGridColor;}
     void SetPageVisible(bool bOn = true) { mbPageVisible=bOn; InvalidateAllWin(); }
     void SetPageShadowVisible(bool bOn) { mbPageShadowVisible=bOn; InvalidateAllWin(); }
     void SetPageBorderVisible(bool bOn = true) { mbPageBorderVisible=bOn; InvalidateAllWin(); }
@@ -502,10 +502,10 @@ public:
     void onChangeColorConfig();
 
     // #103834# Set background color for svx at SdrPageViews
-    void SetApplicationBackgroundColor(Color aBackgroundColor);
+    void SetApplicationBackgroundColor(::Color aBackgroundColor);
 
     // #103911# Set document color for svx at SdrPageViews
-    void SetApplicationDocumentColor(Color aDocumentColor);
+    void SetApplicationDocumentColor(::Color aDocumentColor);
 
     // #i38135#
     // Sets the timer for Object animations and restarts.

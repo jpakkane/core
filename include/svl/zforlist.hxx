@@ -401,9 +401,9 @@ public:
     ~SvNumberFormatter();
 
     /// Set CallBack to ColorTable
-    void SetColorLink( const Link<sal_uInt16,Color*>& rColorTableCallBack );
+    void SetColorLink( const Link<sal_uInt16,::Color*>& rColorTableCallBack );
     /// Do the CallBack to ColorTable
-    Color* GetUserDefColor(sal_uInt16 nIndex);
+    ::Color* GetUserDefColor(sal_uInt16 nIndex);
 
     /// Change language/country, also input and format scanner
     void ChangeIntl( LanguageType eLnge );
@@ -536,13 +536,13 @@ public:
 
     /// Format a number according to a format index, return string and color
     void GetOutputString( const double& fOutNumber, sal_uInt32 nFIndex,
-                          OUString& sOutString, Color** ppColor, bool bUseStarFormat = false );
+                          OUString& sOutString, ::Color** ppColor, bool bUseStarFormat = false );
 
     /** Format a string according to a format index, return string and color.
         Formats only if the format code is of type text or the 4th subcode
         of a format code is specified, otherwise sOutString will be == "" */
     void GetOutputString( const OUString& sString, sal_uInt32 nFIndex,
-                          OUString& sOutString, Color** ppColor, bool bUseStarFormat = false );
+                          OUString& sOutString, ::Color** ppColor, bool bUseStarFormat = false );
 
     /** Format a number according to the standard default format matching
         the given format index */
@@ -557,14 +557,14 @@ public:
     bool GetPreviewString(const OUString& sFormatString,
                           double fPreviewNumber,
                           OUString& sOutString,
-                          Color** ppColor,
+                          ::Color** ppColor,
                           LanguageType eLnge,
                           bool bUseStarFormat = false );
 
     /** Same as <method>GetPreviewString</method> but the format code string
         may be either language/country eLnge or en_US english US */
     bool GetPreviewStringGuess( const OUString& sFormatString, double fPreviewNumber,
-                                OUString& sOutString, Color** ppColor,
+                                OUString& sOutString, ::Color** ppColor,
                                 LanguageType eLnge = LANGUAGE_DONTKNOW );
 
     /** Format a string according to a format code string to be scanned.
@@ -573,7 +573,7 @@ public:
             <TRUE/> else, in which case the string and color are returned.
      */
     bool GetPreviewString( const OUString& sFormatString, const OUString& sPreviewString,
-                           OUString& sOutString, Color** ppColor,
+                           OUString& sOutString, ::Color** ppColor,
                            LanguageType eLnge = LANGUAGE_DONTKNOW );
 
     /** Test whether the format code string is already present in container
@@ -654,7 +654,7 @@ public:
                               LanguageType eLnge, SvNumberformat const * pFormat );
 
     /// Return the reference date
-    const Date& GetNullDate() const;
+    const ::Date& GetNullDate() const;
     /// Return the standard decimal precision
     sal_uInt16 GetStandardPrec() const;
     /// Return whether zero suppression is switched on
@@ -886,7 +886,7 @@ public:
     const NfKeywordTable & GetEnglishKeywords() const;
 
     /** Access for unit tests. */
-    const std::vector<Color> & GetStandardColors() const;
+    const std::vector<::Color> & GetStandardColors() const;
 
     /** Access for unit tests. */
     size_t GetMaxDefaultColors() const;
@@ -911,7 +911,7 @@ private:
     OnDemandNativeNumberWrapper xNatNum;    // Native number service loaded on demand
     std::unique_ptr<ImpSvNumberInputScan> pStringScanner;   // Input string scanner
     std::unique_ptr<ImpSvNumberformatScan> pFormatScanner;  // Format code string scanner
-    Link<sal_uInt16,Color*> aColorLink;     // User defined color table CallBack
+    Link<sal_uInt16,::Color*> aColorLink;     // User defined color table CallBack
     sal_uInt32 MaxCLOffset;                     // Max language/country offset used
     sal_uInt32 nDefaultSystemCurrencyFormat;        // NewCurrency matching SYSTEM locale
     LanguageType IniLnge;                   // Initialized setting language/country

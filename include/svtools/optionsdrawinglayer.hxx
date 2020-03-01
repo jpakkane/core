@@ -72,8 +72,8 @@ class SVT_DLLPUBLIC SvtOptionsDrawinglayer
 
         bool        IsOverlayBuffer() const;
         bool        IsPaintBuffer() const;
-        Color       GetStripeColorA() const;
-        Color       GetStripeColorB() const;
+        ::Color       GetStripeColorA() const;
+        ::Color       GetStripeColorB() const;
         sal_uInt16  GetStripeLength() const;
 
         // #i73602#
@@ -118,7 +118,7 @@ class SVT_DLLPUBLIC SvtOptionsDrawinglayer
         // get system highlight color, limited to the maximum allowed luminance
         // (defined in GetSelectionMaximumLuminancePercent() in SvtOptionsDrawinglayer,
         // combined with Application::GetSettings().GetStyleSettings().GetHighlightColor())
-        Color getHilightColor() const;
+        ::Color getHilightColor() const;
 
     private:
 

@@ -75,7 +75,7 @@ namespace
         return rPool.GetMetric( nWhich );
     }
 
-    css::uno::Reference< css::document::XUndoManager > getUndoManager( const css::uno::Reference< css::frame::XFrame >& rxFrame )
+    css::uno::Reference< css::document::XUndoManager > getUndoManager2( const css::uno::Reference< css::frame::XFrame >& rxFrame )
     {
         const css::uno::Reference< css::frame::XController >& xController = rxFrame->getController();
         if ( xController.is() )
@@ -399,7 +399,7 @@ IMPL_LINK( PageMarginControl, SelectMarginHdl, weld::Button&, rControl, void )
 
     if ( bApplyNewPageMargins )
     {
-        const css::uno::Reference< css::document::XUndoManager > xUndoManager( getUndoManager( SfxViewFrame::Current()->GetFrame().GetFrameInterface() ) );
+        const css::uno::Reference< css::document::XUndoManager > xUndoManager( getUndoManager2( SfxViewFrame::Current()->GetFrame().GetFrameInterface() ) );
         if ( xUndoManager.is() )
             xUndoManager->enterUndoContext( "" );
 

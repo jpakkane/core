@@ -68,7 +68,7 @@ class SAL_WARN_UNUSED SVX_DLLPUBLIC RedlinData
 public:
                     RedlinData();
     virtual         ~RedlinData();
-    DateTime        aDateTime;
+    ::DateTime        aDateTime;
     void*           pData;
     RedlineType     eType;
     bool            bDisabled;
@@ -88,10 +88,10 @@ private:
     bool            bComment;
     bool            bSorted;
     SvxRedlinDateMode nDaTiMode;
-    DateTime        aDaTiFirst;
-    DateTime        aDaTiLast;
-    DateTime        aDaTiFilterFirst;
-    DateTime        aDaTiFilterLast;
+    ::DateTime        aDaTiFirst;
+    ::DateTime        aDaTiLast;
+    ::DateTime        aDaTiFilterFirst;
+    ::DateTime        aDaTiFilterLast;
     OUString        aAuthor;
     std::unique_ptr<utl::TextSearch> pCommentSearcher;
 
@@ -110,8 +110,8 @@ public:
     // For FilterPage only {
     void            SetFilterDate(bool bFlag);
     void            SetDateTimeMode(SvxRedlinDateMode nMode);
-    void            SetFirstDate(const Date&);
-    void            SetLastDate(const Date&);
+    void            SetFirstDate(const ::Date&);
+    void            SetLastDate(const ::Date&);
     void            SetFirstTime(const tools::Time&);
     void            SetLastTime(const tools::Time&);
     void            SetFilterAuthor(bool bFlag);
@@ -125,8 +125,8 @@ public:
     void            SetCalcView();
     void            SetWriterView();
 
-    bool            IsValidEntry(const OUString &rAuthor, const DateTime &rDateTime, const OUString &rComment);
-    bool            IsValidEntry(const OUString &rAuthor, const DateTime &rDateTime);
+    bool            IsValidEntry(const OUString &rAuthor, const ::DateTime &rDateTime, const OUString &rComment);
+    bool            IsValidEntry(const OUString &rAuthor, const ::DateTime &rDateTime);
     bool            IsValidComment(const OUString &rComment);
 
     DECL_LINK(HeaderBarClick, int, void);
@@ -191,13 +191,13 @@ public:
     void            DeactivatePage();
     void            SetRedlinTable(SvxRedlinTable*);
 
-    Date            GetFirstDate() const;
-    void            SetFirstDate(const Date &aDate);
+    ::Date            GetFirstDate() const;
+    void            SetFirstDate(const ::Date &aDate);
     tools::Time     GetFirstTime() const;
     void            SetFirstTime(const tools::Time &aTime);
 
-    Date            GetLastDate() const;
-    void            SetLastDate(const Date &aDate);
+    ::Date            GetLastDate() const;
+    void            SetLastDate(const ::Date &aDate);
     tools::Time     GetLastTime() const;
     void            SetLastTime(const tools::Time &aTime);
 

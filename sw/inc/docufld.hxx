@@ -444,7 +444,7 @@ class SW_DLLPUBLIC SwPostItField final : public SwField
     OUString m_sAuthor;
     OUString m_sInitials; ///< Initials of the author.
     OUString m_sName;     ///< Name of the comment.
-    DateTime    m_aDateTime;
+    ::DateTime    m_aDateTime;
     bool     m_bResolved;
     std::unique_ptr<OutlinerParaObject> mpText;
     rtl::Reference<SwTextAPIObject> m_xTextObject;
@@ -458,7 +458,7 @@ public:
                    const OUString& rText,
                    const OUString& rInitials,
                    const OUString& rName,
-                   const DateTime& rDate,
+                   const ::DateTime& rDate,
                    const bool bResolved = false,
                    const sal_uInt32 nPostItId = 0);
 
@@ -470,8 +470,8 @@ public:
     virtual OUString    ExpandImpl(SwRootFrame const* pLayout) const override;
     virtual std::unique_ptr<SwField> Copy() const override;
 
-    const DateTime&         GetDateTime() const             { return m_aDateTime; }
-    Date       GetDate() const                 { return Date(m_aDateTime.GetDate()); }
+    const ::DateTime&         GetDateTime() const             { return m_aDateTime; }
+    ::Date       GetDate() const                 { return ::Date(m_aDateTime.GetDate()); }
     tools::Time GetTime() const                 { return tools::Time(m_aDateTime.GetTime()); }
     sal_uInt32 GetPostItId() const             { return m_nPostItId; }
 

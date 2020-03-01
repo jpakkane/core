@@ -49,9 +49,9 @@
 #include <vcl/settings.hxx>
 #include <memory>
 
-#define BUTTON_WIDTH 30
-#define BUTTON_HEIGHT 19
-#define ARROW_WIDTH 9
+#define BUTTON_WIDTH2 30
+#define BUTTON_HEIGHT2 19
+#define ARROW_WIDTH2 9
 
 using namespace basegfx;
 using namespace basegfx::utils;
@@ -161,7 +161,7 @@ void SwPageBreakWin::Paint(vcl::RenderContext& rRenderContext, const ::tools::Re
 
     drawinglayer::primitive2d::Primitive2DContainer aSeq(3);
     B2DRectangle aBRect = vcl::unotools::b2DRectangleFromRectangle(aRect);
-    B2DPolygon aPolygon = createPolygonFromRect(aBRect, 3.0 / BUTTON_WIDTH, 3.0 / BUTTON_HEIGHT);
+    B2DPolygon aPolygon = createPolygonFromRect(aBRect, 3.0 / BUTTON_WIDTH2, 3.0 / BUTTON_HEIGHT2);
 
     // Create the polygon primitives
     aSeq[0].set(new drawinglayer::primitive2d::PolyPolygonColorPrimitive2D(
@@ -179,9 +179,9 @@ void SwPageBreakWin::Paint(vcl::RenderContext& rRenderContext, const ::tools::Re
 
     double nTop = double(aRect.getHeight()) / 2.0;
     double nBottom = nTop + 4.0;
-    double nLeft = aRect.getWidth() - ARROW_WIDTH - 6.0;
+    double nLeft = aRect.getWidth() - ARROW_WIDTH2 - 6.0;
     if (bRtl)
-        nLeft = ARROW_WIDTH - 2.0;
+        nLeft = ARROW_WIDTH2 - 2.0;
     double nRight = nLeft + 8.0;
 
     B2DPolygon aTriangle;
@@ -368,7 +368,7 @@ void SwPageBreakWin::UpdatePosition(const o3tl::optional<Point>& xEvtPt)
     else if ( pPageFrame->SidebarPosition( ) == sw::sidebarwindows::SidebarPosition::RIGHT )
         nPgRight += nSidebarWidth;
 
-    Size aBtnSize( BUTTON_WIDTH + ARROW_WIDTH, BUTTON_HEIGHT );
+    Size aBtnSize( BUTTON_WIDTH2 + ARROW_WIDTH2, BUTTON_HEIGHT2 );
 
     // Place the button on the left or right?
     ::tools::Rectangle aVisArea = GetEditWin()->LogicToPixel( GetEditWin()->GetView().GetVisArea() );
@@ -388,7 +388,7 @@ void SwPageBreakWin::UpdatePosition(const o3tl::optional<Point>& xEvtPt)
     }
 
     // Set the button position
-    Point aBtnPos( nBtnLeft, nYLineOffset - BUTTON_HEIGHT / 2 );
+    Point aBtnPos( nBtnLeft, nYLineOffset - BUTTON_HEIGHT2 / 2 );
     SetPosSizePixel( aBtnPos, aBtnSize );
 
     // Set the line position

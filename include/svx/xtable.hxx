@@ -42,12 +42,12 @@
 class SVXCORE_DLLPUBLIC XColorEntry final : public XPropertyEntry
 {
 private:
-    Color   aColor;
+    ::Color   aColor;
 
 public:
-    XColorEntry(const Color& rColor, const OUString& rName);
+    XColorEntry(const ::Color& rColor, const OUString& rName);
 
-    const Color& GetColor() const
+    const ::Color& GetColor() const
     {
         return aColor;
     }
@@ -245,7 +245,7 @@ public:
 
     void Replace(long nIndex, std::unique_ptr<XColorEntry> pEntry);
     XColorEntry* GetColor(long nIndex) const;
-    long GetIndexOfColor( const Color& rColor) const;
+    long GetIndexOfColor( const ::Color& rColor) const;
     virtual css::uno::Reference< css::container::XNameContainer > createInstance() override;
     virtual bool Create() override;
 

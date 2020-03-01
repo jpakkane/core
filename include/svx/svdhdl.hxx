@@ -258,7 +258,7 @@ class SVXCORE_DLLPUBLIC SdrHdlColor final : public SdrHdl
     Size                        aMarkerSize;
 
     // color
-    Color                       aMarkerColor;
+    ::Color                       aMarkerColor;
 
     // callback link when value changed
     Link<SdrHdlColor*,void>     aColorChangeHdl;
@@ -270,17 +270,17 @@ class SVXCORE_DLLPUBLIC SdrHdlColor final : public SdrHdl
     SVX_DLLPRIVATE virtual void CreateB2dIAObject() override;
 
     // help functions
-    SVX_DLLPRIVATE BitmapEx CreateColorDropper(Color aCol);
-    SVX_DLLPRIVATE static Color GetLuminance(const Color& rCol);
+    SVX_DLLPRIVATE BitmapEx CreateColorDropper(::Color aCol);
+    SVX_DLLPRIVATE static ::Color GetLuminance(const ::Color& rCol);
 
 public:
-    explicit SdrHdlColor(const Point& rRef, Color aCol, const Size& rSize, bool bLuminance);
+    explicit SdrHdlColor(const Point& rRef, ::Color aCol, const Size& rSize, bool bLuminance);
     virtual ~SdrHdlColor() override;
 
     bool IsUseLuminance() const { return bUseLuminance; }
 
-    const Color& GetColor() const { return aMarkerColor; }
-    void SetColor(Color aNew, bool bCallLink = false);
+    const ::Color& GetColor() const { return aMarkerColor; }
+    void SetColor(::Color aNew, bool bCallLink = false);
 
     void SetSize(const Size& rNew);
 

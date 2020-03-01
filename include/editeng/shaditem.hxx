@@ -37,14 +37,14 @@ enum class SvxShadowItemSide { TOP, BOTTOM, LEFT, RIGHT };
 
 class EDITENG_DLLPUBLIC SvxShadowItem final : public SfxEnumItemInterface
 {
-    Color               aShadowColor;
+    ::Color               aShadowColor;
     sal_uInt16              nWidth;
     SvxShadowLocation   eLocation;
 public:
     static SfxPoolItem* CreateDefault();
 
     explicit SvxShadowItem( const sal_uInt16 nId ,
-                 const Color *pColor = nullptr, const sal_uInt16 nWidth = 100 /*5pt*/,
+                 const ::Color *pColor = nullptr, const sal_uInt16 nWidth = 100 /*5pt*/,
                  const SvxShadowLocation eLoc = SvxShadowLocation::NONE );
 
     // "pure virtual Methods" from SfxPoolItem
@@ -61,8 +61,8 @@ public:
     virtual void             ScaleMetrics( long nMult, long nDiv ) override;
     virtual bool             HasMetrics() const override;
 
-    const Color& GetColor() const { return aShadowColor;}
-    void SetColor( const Color &rNew ) { aShadowColor = rNew; }
+    const ::Color& GetColor() const { return aShadowColor;}
+    void SetColor( const ::Color &rNew ) { aShadowColor = rNew; }
 
     sal_uInt16 GetWidth() const { return nWidth; }
     SvxShadowLocation GetLocation() const { return eLocation; }

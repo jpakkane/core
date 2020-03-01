@@ -1466,8 +1466,8 @@ public:
     void connect_selected(const Link<Calendar&, void>& rLink) { m_aSelectedHdl = rLink; }
     void connect_activated(const Link<Calendar&, void>& rLink) { m_aActivatedHdl = rLink; }
 
-    virtual void set_date(const Date& rDate) = 0;
-    virtual Date get_date() const = 0;
+    virtual void set_date(const ::Date& rDate) = 0;
+    virtual ::Date get_date() const = 0;
 };
 
 // an entry + treeview pair, where the entry autocompletes from the

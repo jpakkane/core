@@ -127,14 +127,14 @@ class VCL_DLLPUBLIC Calendar final : public Control
     tools::Rectangle       maNextRect;
     OUString        maDayOfWeekText;
     long            mnDayOfWeekAry[7];
-    Date            maOldFormatFirstDate;
-    Date            maOldFormatLastDate;
-    Date            maFirstDate;
-    Date            maOldFirstDate;
-    Date            maCurDate;
-    Date            maOldCurDate;
-    Color           maSelColor;
-    Color           maOtherColor;
+    ::Date            maOldFormatFirstDate;
+    ::Date            maOldFormatLastDate;
+    ::Date            maFirstDate;
+    ::Date            maOldFirstDate;
+    ::Date            maCurDate;
+    ::Date            maOldCurDate;
+    ::Color           maSelColor;
+    ::Color           maOtherColor;
     sal_Int32       mnDayCount;
     long            mnDaysOffX;
     long            mnWeekDayOffY;
@@ -170,19 +170,19 @@ class VCL_DLLPUBLIC Calendar final : public Control
 
     VCL_DLLPRIVATE void         ImplFormat();
     using Window::ImplHitTest;
-    VCL_DLLPRIVATE sal_uInt16   ImplHitTest( const Point& rPos, Date& rDate ) const;
+    VCL_DLLPRIVATE sal_uInt16   ImplHitTest( const Point& rPos, ::Date& rDate ) const;
     VCL_DLLPRIVATE void         ImplDrawSpin(vcl::RenderContext& rRenderContext);
     VCL_DLLPRIVATE void         ImplDrawDate(vcl::RenderContext& rRenderContext, long nX, long nY,
                                              sal_uInt16 nDay, sal_uInt16 nMonth, sal_Int16 nYear,
                                              bool bOther, sal_Int32 nToday);
     VCL_DLLPRIVATE void         ImplDraw(vcl::RenderContext& rRenderContext);
-    VCL_DLLPRIVATE void         ImplUpdateDate( const Date& rDate );
+    VCL_DLLPRIVATE void         ImplUpdateDate( const ::Date& rDate );
     VCL_DLLPRIVATE void         ImplUpdateSelection( IntDateSet* pOld );
-    VCL_DLLPRIVATE void         ImplMouseSelect( const Date& rDate, sal_uInt16 nHitTest );
+    VCL_DLLPRIVATE void         ImplMouseSelect( const ::Date& rDate, sal_uInt16 nHitTest );
     VCL_DLLPRIVATE void         ImplUpdate( bool bCalcNew = false );
     using Window::ImplScroll;
     VCL_DLLPRIVATE void         ImplScroll( bool bPrev );
-    VCL_DLLPRIVATE void         ImplShowMenu( const Point& rPos, const Date& rDate );
+    VCL_DLLPRIVATE void         ImplShowMenu( const Point& rPos, const ::Date& rDate );
     VCL_DLLPRIVATE void         ImplTracking( const Point& rPos, bool bRepeat );
     VCL_DLLPRIVATE void         ImplEndTracking( bool bCancel );
     VCL_DLLPRIVATE DayOfWeek    ImplGetWeekStart() const;
@@ -209,18 +209,18 @@ public:
 
     void            Select();
 
-    Date            GetFirstSelectedDate() const;
+    ::Date            GetFirstSelectedDate() const;
     void            EnableCallEverySelect() { mbAllSel = true; }
 
-    void            SetCurDate( const Date& rNewDate );
-    void            SetFirstDate( const Date& rNewFirstDate );
-    const Date&     GetFirstDate() const { return maFirstDate; }
-    Date            GetLastDate() const { return GetFirstDate() + mnDayCount; }
-    Date            GetFirstMonth() const;
-    Date            GetLastMonth() const;
+    void            SetCurDate( const ::Date& rNewDate );
+    void            SetFirstDate( const ::Date& rNewFirstDate );
+    const ::Date&     GetFirstDate() const { return maFirstDate; }
+    ::Date            GetLastDate() const { return GetFirstDate() + mnDayCount; }
+    ::Date            GetFirstMonth() const;
+    ::Date            GetLastMonth() const;
     sal_uInt16      GetMonthCount() const;
-    bool            GetDate( const Point& rPos, Date& rDate ) const;
-    tools::Rectangle       GetDateRect( const Date& rDate ) const;
+    bool            GetDate( const Point& rPos, ::Date& rDate ) const;
+    tools::Rectangle       GetDateRect( const ::Date& rDate ) const;
 
     void            StartSelection();
     void            EndSelection();

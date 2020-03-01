@@ -63,8 +63,8 @@ class SW_DLLPUBLIC SwEditWin final : public vcl::Window,
     static  long    m_nDDStartPosX;
     static  long    m_nDDStartPosY;
 
-    Color m_aWaterCanTextColor;     // text color; for the watering can
-    Color m_aWaterCanTextBackColor; // text background; for the watering can
+    ::Color m_aWaterCanTextColor;     // text color; for the watering can
+    ::Color m_aWaterCanTextBackColor; // text background; for the watering can
 
     /*
      * timer and handler for scrolling on when the mousepointer
@@ -232,9 +232,9 @@ public:
     void            StartExecuteDrag();
     void            DragFinished();
 
-    void         SetWaterCanTextColor(const Color& rCol ) { m_aWaterCanTextColor = rCol; }
+    void         SetWaterCanTextColor(const ::Color& rCol ) { m_aWaterCanTextColor = rCol; }
 
-    void         SetWaterCanTextBackColor(const Color& rCol ) { m_aWaterCanTextBackColor = rCol; }
+    void         SetWaterCanTextBackColor(const ::Color& rCol ) { m_aWaterCanTextBackColor = rCol; }
 
     void            LockKeyInput(bool bSet){m_bLockInput = bSet;}
 

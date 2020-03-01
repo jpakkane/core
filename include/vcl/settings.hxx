@@ -220,175 +220,175 @@ private:
 public:
                                     StyleSettings();
 
-    void                            Set3DColors( const Color& rColor );
+    void                            Set3DColors( const ::Color& rColor );
 
-    void                            SetFaceColor( const Color& rColor );
-    const Color&                    GetFaceColor() const;
+    void                            SetFaceColor( const ::Color& rColor );
+    const ::Color&                    GetFaceColor() const;
 
-    Color                           GetFaceGradientColor() const;
+    ::Color                           GetFaceGradientColor() const;
 
-    Color                           GetSeparatorColor() const;
+    ::Color                           GetSeparatorColor() const;
 
-    void                            SetCheckedColor( const Color& rColor );
+    void                            SetCheckedColor( const ::Color& rColor );
     void                            SetCheckedColorSpecialCase( );
-    const Color&                    GetCheckedColor() const;
+    const ::Color&                    GetCheckedColor() const;
 
-    void                            SetLightColor( const Color& rColor );
-    const Color&                    GetLightColor() const;
+    void                            SetLightColor( const ::Color& rColor );
+    const ::Color&                    GetLightColor() const;
 
-    void                            SetLightBorderColor( const Color& rColor );
-    const Color&                    GetLightBorderColor() const;
+    void                            SetLightBorderColor( const ::Color& rColor );
+    const ::Color&                    GetLightBorderColor() const;
 
-    void                            SetShadowColor( const Color& rColor );
-    const Color&                    GetShadowColor() const;
+    void                            SetShadowColor( const ::Color& rColor );
+    const ::Color&                    GetShadowColor() const;
 
-    void                            SetDarkShadowColor( const Color& rColor );
-    const Color&                    GetDarkShadowColor() const;
+    void                            SetDarkShadowColor( const ::Color& rColor );
+    const ::Color&                    GetDarkShadowColor() const;
 
-    void                            SetButtonTextColor( const Color& rColor );
-    const Color&                    GetButtonTextColor() const;
+    void                            SetButtonTextColor( const ::Color& rColor );
+    const ::Color&                    GetButtonTextColor() const;
 
-    void                            SetDefaultActionButtonTextColor( const Color& rColor );
-    const Color&                    GetDefaultActionButtonTextColor() const;
+    void                            SetDefaultActionButtonTextColor( const ::Color& rColor );
+    const ::Color&                    GetDefaultActionButtonTextColor() const;
 
-    void                            SetActionButtonTextColor( const Color& rColor );
-    const Color&                    GetActionButtonTextColor() const;
+    void                            SetActionButtonTextColor( const ::Color& rColor );
+    const ::Color&                    GetActionButtonTextColor() const;
 
-    void                            SetActionButtonRolloverTextColor( const Color& rColor );
-    const Color&                    GetActionButtonRolloverTextColor() const;
+    void                            SetActionButtonRolloverTextColor( const ::Color& rColor );
+    const ::Color&                    GetActionButtonRolloverTextColor() const;
 
-    void                            SetButtonRolloverTextColor( const Color& rColor );
-    const Color&                    GetButtonRolloverTextColor() const;
+    void                            SetButtonRolloverTextColor( const ::Color& rColor );
+    const ::Color&                    GetButtonRolloverTextColor() const;
 
-    void                            SetButtonPressedRolloverTextColor( const Color& rColor );
-    const Color&                    GetButtonPressedRolloverTextColor() const;
+    void                            SetButtonPressedRolloverTextColor( const ::Color& rColor );
+    const ::Color&                    GetButtonPressedRolloverTextColor() const;
 
-    void                            SetRadioCheckTextColor( const Color& rColor );
-    const Color&                    GetRadioCheckTextColor() const;
+    void                            SetRadioCheckTextColor( const ::Color& rColor );
+    const ::Color&                    GetRadioCheckTextColor() const;
 
-    void                            SetGroupTextColor( const Color& rColor );
-    const Color&                    GetGroupTextColor() const;
+    void                            SetGroupTextColor( const ::Color& rColor );
+    const ::Color&                    GetGroupTextColor() const;
 
-    void                            SetLabelTextColor( const Color& rColor );
-    const Color&                    GetLabelTextColor() const;
+    void                            SetLabelTextColor( const ::Color& rColor );
+    const ::Color&                    GetLabelTextColor() const;
 
-    void                            SetWindowColor( const Color& rColor );
-    const Color&                    GetWindowColor() const;
+    void                            SetWindowColor( const ::Color& rColor );
+    const ::Color&                    GetWindowColor() const;
 
-    void                            SetWindowTextColor( const Color& rColor );
-    const Color&                    GetWindowTextColor() const;
+    void                            SetWindowTextColor( const ::Color& rColor );
+    const ::Color&                    GetWindowTextColor() const;
 
-    void                            SetDialogColor( const Color& rColor );
-    const Color&                    GetDialogColor() const;
+    void                            SetDialogColor( const ::Color& rColor );
+    const ::Color&                    GetDialogColor() const;
 
-    void                            SetDialogTextColor( const Color& rColor );
-    const Color&                    GetDialogTextColor() const;
+    void                            SetDialogTextColor( const ::Color& rColor );
+    const ::Color&                    GetDialogTextColor() const;
 
-    void                            SetWorkspaceColor( const Color& rColor );
-    const Color&                    GetWorkspaceColor() const;
+    void                            SetWorkspaceColor( const ::Color& rColor );
+    const ::Color&                    GetWorkspaceColor() const;
 
-    void                            SetFieldColor( const Color& rColor );
-    const Color&                    GetFieldColor() const;
+    void                            SetFieldColor( const ::Color& rColor );
+    const ::Color&                    GetFieldColor() const;
 
-    void                            SetFieldTextColor( const Color& rColor );
-    const Color&                    GetFieldTextColor() const;
+    void                            SetFieldTextColor( const ::Color& rColor );
+    const ::Color&                    GetFieldTextColor() const;
 
-    void                            SetFieldRolloverTextColor( const Color& rColor );
-    const Color&                    GetFieldRolloverTextColor() const;
+    void                            SetFieldRolloverTextColor( const ::Color& rColor );
+    const ::Color&                    GetFieldRolloverTextColor() const;
 
-    void                            SetActiveColor( const Color& rColor );
-    const Color&                    GetActiveColor() const;
+    void                            SetActiveColor( const ::Color& rColor );
+    const ::Color&                    GetActiveColor() const;
 
-    void                            SetActiveTextColor( const Color& rColor );
-    const Color&                    GetActiveTextColor() const;
+    void                            SetActiveTextColor( const ::Color& rColor );
+    const ::Color&                    GetActiveTextColor() const;
 
-    void                            SetActiveBorderColor( const Color& rColor );
-    const Color&                    GetActiveBorderColor() const;
+    void                            SetActiveBorderColor( const ::Color& rColor );
+    const ::Color&                    GetActiveBorderColor() const;
 
-    void                            SetDeactiveColor( const Color& rColor );
-    const Color&                    GetDeactiveColor() const;
+    void                            SetDeactiveColor( const ::Color& rColor );
+    const ::Color&                    GetDeactiveColor() const;
 
-    void                            SetDeactiveTextColor( const Color& rColor );
-    const Color&                    GetDeactiveTextColor() const;
+    void                            SetDeactiveTextColor( const ::Color& rColor );
+    const ::Color&                    GetDeactiveTextColor() const;
 
-    void                            SetDeactiveBorderColor( const Color& rColor );
-    const Color&                    GetDeactiveBorderColor() const;
+    void                            SetDeactiveBorderColor( const ::Color& rColor );
+    const ::Color&                    GetDeactiveBorderColor() const;
 
-    void                            SetHighlightColor( const Color& rColor );
-    const Color&                    GetHighlightColor() const;
+    void                            SetHighlightColor( const ::Color& rColor );
+    const ::Color&                    GetHighlightColor() const;
 
-    void                            SetHighlightTextColor( const Color& rColor );
-    const Color&                    GetHighlightTextColor() const;
+    void                            SetHighlightTextColor( const ::Color& rColor );
+    const ::Color&                    GetHighlightTextColor() const;
 
-    void                            SetDisableColor( const Color& rColor );
-    const Color&                    GetDisableColor() const;
+    void                            SetDisableColor( const ::Color& rColor );
+    const ::Color&                    GetDisableColor() const;
 
-    void                            SetHelpColor( const Color& rColor );
-    const Color&                    GetHelpColor() const;
+    void                            SetHelpColor( const ::Color& rColor );
+    const ::Color&                    GetHelpColor() const;
 
-    void                            SetHelpTextColor( const Color& rColor );
-    const Color&                    GetHelpTextColor() const;
+    void                            SetHelpTextColor( const ::Color& rColor );
+    const ::Color&                    GetHelpTextColor() const;
 
-    void                            SetMenuColor( const Color& rColor );
-    const Color&                    GetMenuColor() const;
+    void                            SetMenuColor( const ::Color& rColor );
+    const ::Color&                    GetMenuColor() const;
 
-    void                            SetMenuBarColor( const Color& rColor );
-    const Color&                    GetMenuBarColor() const;
+    void                            SetMenuBarColor( const ::Color& rColor );
+    const ::Color&                    GetMenuBarColor() const;
 
-    void                            SetMenuBarRolloverColor( const Color& rColor );
-    const Color&                    GetMenuBarRolloverColor() const;
+    void                            SetMenuBarRolloverColor( const ::Color& rColor );
+    const ::Color&                    GetMenuBarRolloverColor() const;
 
-    void                            SetMenuBorderColor( const Color& rColor );
-    const Color&                    GetMenuBorderColor() const;
+    void                            SetMenuBorderColor( const ::Color& rColor );
+    const ::Color&                    GetMenuBorderColor() const;
 
-    void                            SetMenuTextColor( const Color& rColor );
-    const Color&                    GetMenuTextColor() const;
+    void                            SetMenuTextColor( const ::Color& rColor );
+    const ::Color&                    GetMenuTextColor() const;
 
-    void                            SetMenuBarTextColor( const Color& rColor );
-    const Color&                    GetMenuBarTextColor() const;
+    void                            SetMenuBarTextColor( const ::Color& rColor );
+    const ::Color&                    GetMenuBarTextColor() const;
 
-    void                            SetMenuBarRolloverTextColor( const Color& rColor );
-    const Color&                    GetMenuBarRolloverTextColor() const;
+    void                            SetMenuBarRolloverTextColor( const ::Color& rColor );
+    const ::Color&                    GetMenuBarRolloverTextColor() const;
 
-    void                            SetMenuBarHighlightTextColor( const Color& rColor );
-    const Color&                    GetMenuBarHighlightTextColor() const;
+    void                            SetMenuBarHighlightTextColor( const ::Color& rColor );
+    const ::Color&                    GetMenuBarHighlightTextColor() const;
 
-    void                            SetMenuHighlightColor( const Color& rColor );
-    const Color&                    GetMenuHighlightColor() const;
+    void                            SetMenuHighlightColor( const ::Color& rColor );
+    const ::Color&                    GetMenuHighlightColor() const;
 
-    void                            SetMenuHighlightTextColor( const Color& rColor );
-    const Color&                    GetMenuHighlightTextColor() const;
+    void                            SetMenuHighlightTextColor( const ::Color& rColor );
+    const ::Color&                    GetMenuHighlightTextColor() const;
 
-    void                            SetTabTextColor( const Color& rColor );
-    const Color&                    GetTabTextColor() const;
+    void                            SetTabTextColor( const ::Color& rColor );
+    const ::Color&                    GetTabTextColor() const;
 
-    void                            SetTabRolloverTextColor( const Color& rColor );
-    const Color&                    GetTabRolloverTextColor() const;
+    void                            SetTabRolloverTextColor( const ::Color& rColor );
+    const ::Color&                    GetTabRolloverTextColor() const;
 
-    void                            SetTabHighlightTextColor( const Color& rColor );
-    const Color&                    GetTabHighlightTextColor() const;
+    void                            SetTabHighlightTextColor( const ::Color& rColor );
+    const ::Color&                    GetTabHighlightTextColor() const;
 
-    void                            SetToolTextColor( const Color& rColor );
-    const Color&                    GetToolTextColor() const;
+    void                            SetToolTextColor( const ::Color& rColor );
+    const ::Color&                    GetToolTextColor() const;
 
-    void                            SetLinkColor( const Color& rColor );
-    const Color&                    GetLinkColor() const;
+    void                            SetLinkColor( const ::Color& rColor );
+    const ::Color&                    GetLinkColor() const;
 
-    void                            SetVisitedLinkColor( const Color& rColor );
-    const Color&                    GetVisitedLinkColor() const;
+    void                            SetVisitedLinkColor( const ::Color& rColor );
+    const ::Color&                    GetVisitedLinkColor() const;
 
-    const Color&                    GetHighlightLinkColor() const;
+    const ::Color&                    GetHighlightLinkColor() const;
 
-    void                            SetMonoColor( const Color& rColor );
-    const Color&                    GetMonoColor() const;
+    void                            SetMonoColor( const ::Color& rColor );
+    const ::Color&                    GetMonoColor() const;
 
-    void                            SetActiveTabColor( const Color& rColor );
-    const Color&                    GetActiveTabColor() const;
+    void                            SetActiveTabColor( const ::Color& rColor );
+    const ::Color&                    GetActiveTabColor() const;
 
-    void                            SetInactiveTabColor( const Color& rColor );
-    const Color&                    GetInactiveTabColor() const;
+    void                            SetInactiveTabColor( const ::Color& rColor );
+    const ::Color&                    GetInactiveTabColor() const;
 
-    const Color&                    GetAlternatingRowColor() const;
+    const ::Color&                    GetAlternatingRowColor() const;
 
     void                            SetHighContrastMode(bool bHighContrast );
     bool                            GetHighContrastMode() const;
@@ -510,8 +510,8 @@ public:
 
     static bool                     GetDockingFloatsSupported();
 
-    void                            SetFontColor( const Color& rColor );
-    const Color&                    GetFontColor() const;
+    void                            SetFontColor( const ::Color& rColor );
+    const ::Color&                    GetFontColor() const;
 
     void                            SetToolbarIconSize( ToolbarIconSize nSize );
     ToolbarIconSize                 GetToolbarIconSize() const;
@@ -549,7 +549,7 @@ public:
 
     BitmapEx const &                GetPersonaFooter() const;
 
-    const o3tl::optional<Color>&   GetPersonaMenuBarTextColor() const;
+    const o3tl::optional<::Color>&   GetPersonaMenuBarTextColor() const;
 
     // global switch to allow EdgeBlenging; currently possible for ValueSet and ListBox
     // when activated there using Get/SetEdgeBlending; default is true
@@ -558,8 +558,8 @@ public:
 
     // TopLeft (default Color(0xC0, 0xC0, 0xC0)) and BottomRight (default Color(0x40, 0x40, 0x40))
     // default colors for EdgeBlending
-    const Color&                    GetEdgeBlendingTopLeftColor() const;
-    const Color&                    GetEdgeBlendingBottomRightColor() const;
+    const ::Color&                    GetEdgeBlendingTopLeftColor() const;
+    const ::Color&                    GetEdgeBlendingBottomRightColor() const;
 
     // maximum line count for ListBox control; to use this, call AdaptDropDownLineCountToMaximum() at the
     // ListBox after it's ItemCount has changed/got filled. Default is 25. If more Items exist, a scrollbar
@@ -594,7 +594,7 @@ public:
     bool                            operator !=( const StyleSettings& rSet ) const;
 
     // Batch setters used by various backends
-    void                            BatchSetBackgrounds( const Color &aBackColor,
+    void                            BatchSetBackgrounds( const ::Color &aBackColor,
                                                          bool bCheckedColorSpecialCase = true );
     void                            BatchSetFonts( const vcl::Font& aAppFont,
                                                    const vcl::Font& aLabelFont );

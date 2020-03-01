@@ -99,7 +99,7 @@ void SAL_CALL SwLinguServiceEventListener::processLinguServiceEvent(
 }
 
 void SAL_CALL SwLinguServiceEventListener::disposing(
-            const EventObject& rEventObj )
+                                                     const ::com::sun::star::lang::EventObject& rEventObj )
 {
     SolarMutexGuard aGuard;
 
@@ -110,12 +110,12 @@ void SAL_CALL SwLinguServiceEventListener::disposing(
 }
 
 void SAL_CALL SwLinguServiceEventListener::queryTermination(
-            const EventObject& /*rEventObj*/ )
+            const ::com::sun::star::lang::EventObject& /*rEventObj*/ )
 {
 }
 
 void SAL_CALL SwLinguServiceEventListener::notifyTermination(
-            const EventObject& rEventObj )
+            const ::com::sun::star::lang::EventObject& rEventObj )
 {
     SolarMutexGuard aGuard;
 

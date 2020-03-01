@@ -55,7 +55,7 @@
 #include <dcontact.hxx>
 #include <svx/svdmark.hxx>
 const char sServiceName[] = "com.sun.star.text.AccessibleTextDocumentView";
-const char sImplementationName[] = "com.sun.star.comp.Writer.SwAccessibleDocumentView";
+const char sImplementationName4[] = "com.sun.star.comp.Writer.SwAccessibleDocumentView";
 
 using namespace ::com::sun::star;
 using namespace ::com::sun::star::accessibility;
@@ -421,7 +421,7 @@ IMPL_LINK( SwAccessibleDocument, WindowChildEventListener, VclWindowEvent&, rEve
 
 OUString SAL_CALL SwAccessibleDocument::getImplementationName()
 {
-    return sImplementationName;
+    return sImplementationName4;
 }
 
 sal_Bool SAL_CALL SwAccessibleDocument::supportsService(const OUString& sTestServiceName)

@@ -556,8 +556,8 @@ static Graphic ImpGetScaledGraphic( const Graphic& rGraphic, FilterConfigItem& r
                 nMode = 2;
         }
 
-        Size aOriginalSize;
-        Size aPrefSize( rGraphic.GetPrefSize() );
+        ::Size aOriginalSize;
+        ::Size aPrefSize( rGraphic.GetPrefSize() );
         MapMode aPrefMapMode( rGraphic.GetPrefMapMode() );
         if (aPrefMapMode.GetMapUnit() == MapUnit::MapPixel)
             aOriginalSize = Application::GetDefaultDevice()->PixelToLogic(aPrefSize, MapMode(MapUnit::Map100thMM));
@@ -582,10 +582,10 @@ static Graphic ImpGetScaledGraphic( const Graphic& rGraphic, FilterConfigItem& r
                 aMap.SetScaleX( aFrac );
                 aMap.SetScaleY( aFrac );
 
-                Size aOldSize = aBitmap.GetSizePixel();
+                ::Size aOldSize = aBitmap.GetSizePixel();
                 aGraphic = rGraphic;
                 aGraphic.SetPrefMapMode( aMap );
-                aGraphic.SetPrefSize( Size( aOldSize.Width() * 100,
+                aGraphic.SetPrefSize( ::Size( aOldSize.Width() * 100,
                                             aOldSize.Height() * 100 ) );
             }
             // Size is set
@@ -593,7 +593,7 @@ static Graphic ImpGetScaledGraphic( const Graphic& rGraphic, FilterConfigItem& r
             {
                aGraphic = rGraphic;
                aGraphic.SetPrefMapMode( MapMode( MapUnit::Map100thMM ) );
-               aGraphic.SetPrefSize( Size( nLogicalWidth, nLogicalHeight ) );
+               aGraphic.SetPrefSize( ::Size( nLogicalWidth, nLogicalHeight ) );
             }
             else
                 aGraphic = rGraphic;
@@ -611,11 +611,11 @@ static Graphic ImpGetScaledGraphic( const Graphic& rGraphic, FilterConfigItem& r
             if( ( nMode == 1 ) || ( nMode == 2 ) )
             {
                 GDIMetaFile aMtf( rGraphic.GetGDIMetaFile() );
-                Size aNewSize( OutputDevice::LogicToLogic(Size(nLogicalWidth, nLogicalHeight), MapMode(MapUnit::Map100thMM), aMtf.GetPrefMapMode()) );
+                ::Size aNewSize( OutputDevice::LogicToLogic(::Size(nLogicalWidth, nLogicalHeight), MapMode(MapUnit::Map100thMM), aMtf.GetPrefMapMode()) );
 
                 if( aNewSize.Width() && aNewSize.Height() )
                 {
-                    const Size aPreferredSize( aMtf.GetPrefSize() );
+                    const ::Size aPreferredSize( aMtf.GetPrefSize() );
                     aMtf.Scale( Fraction( aNewSize.Width(), aPreferredSize.Width() ),
                                 Fraction( aNewSize.Height(), aPreferredSize.Height() ) );
                 }
@@ -1192,7 +1192,7 @@ void GraphicFilter::ImportGraphics(std::vector< std::shared_ptr<Graphic> >& rGra
 }
 
 Graphic GraphicFilter::ImportUnloadedGraphic(SvStream& rIStream, sal_uInt64 sizeLimit,
-                                             const Size* pSizeHint)
+                                             const ::Size* pSizeHint)
 {
     Graphic aGraphic;
     sal_uInt16 nFormat = GRFILTER_FORMAT_DONTKNOW;
@@ -1466,7 +1466,7 @@ ErrCode GraphicFilter::ImportGraphic( Graphic& rGraphic, const OUString& rPath, 
     GfxLinkType                    eLinkType = GfxLinkType::NONE;
     const bool                     bLinkSet = rGraphic.IsGfxLink();
 
-    Size                aPreviewSizeHint( 0, 0 );
+    ::Size                aPreviewSizeHint( 0, 0 );
     bool                bAllowPartialStreamRead = false;
     bool                bCreateNativeLink = true;
 
@@ -1484,7 +1484,7 @@ ErrCode GraphicFilter::ImportGraphic( Graphic& rGraphic, const OUString& rPath, 
                 css::awt::Size aSize;
                 if ( rPropVal.Value >>= aSize )
                 {
-                    aPreviewSizeHint = Size( aSize.Width, aSize.Height );
+                    aPreviewSizeHint = ::Size( aSize.Width, aSize.Height );
                     if ( aSize.Width || aSize.Height )
                         nImportFlags |= GraphicFilterImportFlags::ForPreview;
                     else
@@ -1940,7 +1940,7 @@ ErrCode GraphicFilter::ExportGraphic( const Graphic& rGraphic, const OUString& r
     {
         if( eType != GraphicType::Bitmap )
         {
-            Size aSizePixel;
+            ::Size aSizePixel;
             sal_uLong nBitsPerPixel,nNeededMem,nMaxMem;
             ScopedVclPtrInstance< VirtualDevice > aVirDev;
 

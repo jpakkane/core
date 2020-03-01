@@ -60,8 +60,8 @@ struct ImplSVEvent;
 class OutlinerParaObject;
 namespace i18nutil { struct SearchOptions2; }
 
-#define COL_NOTES_SIDEPANE_ARROW_ENABLED    Color(0,0,0)
-#define COL_NOTES_SIDEPANE_ARROW_DISABLED   Color(172,168,153)
+#define COL_NOTES_SIDEPANE_ARROW_ENABLED    ::Color(0,0,0)
+#define COL_NOTES_SIDEPANE_ARROW_DISABLED   ::Color(172,168,153)
 
 struct SwPostItPageItem
 {
@@ -224,7 +224,7 @@ class SAL_DLLPUBLIC_RTTI SwPostItMgr final : public SfxListener
         bool IsHit(const Point &aPointPixel);
         /// Get the matching window that is responsible for handling mouse events of rPointLogic, if any.
         vcl::Window* IsHitSidebarWindow(const Point& rPointLogic);
-        Color GetArrowColor(sal_uInt16 aDirection,unsigned long aPage) const;
+        ::Color GetArrowColor(sal_uInt16 aDirection,unsigned long aPage) const;
 
         sw::annotation::SwAnnotationWin* GetAnnotationWin(const SwPostItField* pField) const;
         sw::annotation::SwAnnotationWin* GetAnnotationWin(const sal_uInt32 nPostItId) const;
@@ -250,9 +250,9 @@ class SAL_DLLPUBLIC_RTTI SwPostItMgr final : public SfxListener
 
         void SetSpellChecking();
 
-        static Color           GetColorDark(std::size_t aAuthorIndex);
-        static Color           GetColorLight(std::size_t aAuthorIndex);
-        static Color           GetColorAnchor(std::size_t aAuthorIndex);
+        static ::Color           GetColorDark(std::size_t aAuthorIndex);
+        static ::Color           GetColorLight(std::size_t aAuthorIndex);
+        static ::Color           GetColorAnchor(std::size_t aAuthorIndex);
 
         void                RegisterAnswer(OutlinerParaObject* pAnswer) { mpAnswer = pAnswer;}
         OutlinerParaObject* IsAnswer() {return mpAnswer;}

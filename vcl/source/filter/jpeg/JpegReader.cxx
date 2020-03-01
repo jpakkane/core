@@ -282,9 +282,9 @@ Graphic JPEGReader::CreateIntermediateGraphic(long nLines)
     return aGraphic;
 }
 
-ReadState JPEGReader::Read( Graphic& rGraphic, GraphicFilterImportFlags nImportFlags, BitmapScopedWriteAccess* ppAccess )
+ReadState3 JPEGReader::Read( Graphic& rGraphic, GraphicFilterImportFlags nImportFlags, BitmapScopedWriteAccess* ppAccess )
 {
-    ReadState   eReadState;
+    ReadState3   eReadState;
     bool        bRet = false;
 
     // seek back to the original position

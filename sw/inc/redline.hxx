@@ -91,7 +91,7 @@ class SW_DLLPUBLIC SwRedlineData
     SwRedlineExtraData* m_pExtraData;
 
     OUString m_sComment;
-    DateTime m_aStamp;
+    ::DateTime m_aStamp;
     RedlineType m_eType;
     bool m_bAutoFormat;
     std::size_t const m_nAuthor;
@@ -102,7 +102,7 @@ public:
     SwRedlineData( const SwRedlineData& rCpy, bool bCpyNext = true );
 
     // For sw3io: pNext/pExtraData are taken over.
-    SwRedlineData( RedlineType eT, std::size_t nAut, const DateTime& rDT,
+    SwRedlineData( RedlineType eT, std::size_t nAut, const ::DateTime& rDT,
                    const OUString& rCmnt, SwRedlineData* pNxt );
 
     ~SwRedlineData();
@@ -126,11 +126,11 @@ public:
 
     std::size_t GetAuthor() const                { return m_nAuthor; }
     const OUString& GetComment() const        { return m_sComment; }
-    const DateTime& GetTimeStamp() const    { return m_aStamp; }
+    const ::DateTime& GetTimeStamp() const    { return m_aStamp; }
     const SwRedlineData* Next() const{ return m_pNext; }
 
     void SetComment( const OUString& rS )     { m_sComment = rS; }
-    void SetTimeStamp( const DateTime& rDT ) { m_aStamp = rDT; }
+    void SetTimeStamp( const ::DateTime& rDT ) { m_aStamp = rDT; }
 
     void SetAutoFormat() { m_bAutoFormat = true; }
     bool IsAutoFormat() const { return m_bAutoFormat; }
@@ -203,7 +203,7 @@ public:
     sal_uInt16 GetStackCount() const;
     std::size_t GetAuthor( sal_uInt16 nPos = 0) const;
     OUString const & GetAuthorString( sal_uInt16 nPos = 0 ) const;
-    const DateTime& GetTimeStamp( sal_uInt16 nPos = 0) const;
+    const ::DateTime& GetTimeStamp( sal_uInt16 nPos = 0) const;
     RedlineType GetType( sal_uInt16 nPos = 0 ) const;
     const OUString& GetComment( sal_uInt16 nPos = 0 ) const;
 

@@ -31,7 +31,7 @@ using namespace ::com::sun::star;
 using namespace ::com::sun::star::lang;
 using namespace ::com::sun::star::accessibility;
 
-const char sImplementationName[] = "com.sun.star.comp.Writer.SwAccessibleEmbeddedObject";
+const char sImplementationName3[] = "com.sun.star.comp.Writer.SwAccessibleEmbeddedObject";
 
 SwAccessibleEmbeddedObject::SwAccessibleEmbeddedObject(
         std::shared_ptr<SwAccessibleMap> const& pInitMap,
@@ -71,7 +71,7 @@ void SAL_CALL
 
 OUString SAL_CALL SwAccessibleEmbeddedObject::getImplementationName()
 {
-    return sImplementationName;
+    return sImplementationName3;
 }
 
 sal_Bool SAL_CALL SwAccessibleEmbeddedObject::supportsService(const OUString& sTestServiceName)

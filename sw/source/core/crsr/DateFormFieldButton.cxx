@@ -46,7 +46,7 @@ SwDatePickerDialog::SwDatePickerDialog(SwEditWin* parent, sw::mark::DateFieldmar
         std::pair<bool, double> aResult = m_pFieldmark->GetCurrentDate();
         if (aResult.first)
         {
-            const Date& rNullDate = m_pNumberFormatter->GetNullDate();
+            const ::Date& rNullDate = m_pNumberFormatter->GetNullDate();
             m_pCalendar->SetCurDate(rNullDate + sal_Int32(aResult.second));
         }
     }
@@ -70,7 +70,7 @@ IMPL_LINK(SwDatePickerDialog, ImplSelectHdl, Calendar*, pCalendar, void)
     {
         if (m_pFieldmark != nullptr)
         {
-            const Date& rNullDate = m_pNumberFormatter->GetNullDate();
+            const ::Date& rNullDate = m_pNumberFormatter->GetNullDate();
             double dDate = pCalendar->GetFirstSelectedDate() - rNullDate;
             m_pFieldmark->SetCurrentDate(dDate);
         }

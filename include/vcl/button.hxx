@@ -195,7 +195,7 @@ protected:
     virtual void    FillLayoutData() const override;
     virtual const vcl::Font&
                     GetCanonicalFont( const StyleSettings& _rStyle ) const override;
-    virtual const Color&
+    virtual const ::Color&
                     GetCanonicalTextColor( const StyleSettings& _rStyle ) const override;
 
 private:
@@ -312,7 +312,7 @@ protected:
     virtual void    FillLayoutData() const override;
     virtual const vcl::Font&
                     GetCanonicalFont( const StyleSettings& _rStyle ) const override;
-    virtual const Color&
+    virtual const ::Color&
                     GetCanonicalTextColor( const StyleSettings& _rStyle ) const override;
     void            ImplAdjustNWFSizes() override;
 
@@ -417,7 +417,7 @@ protected:
     SAL_DLLPRIVATE void         ImplInit( vcl::Window* pParent, WinBits nStyle );
     virtual void                FillLayoutData() const override;
     virtual const vcl::Font&    GetCanonicalFont( const StyleSettings& _rStyle ) const override;
-    virtual const Color&        GetCanonicalTextColor( const StyleSettings& _rStyle ) const override;
+    virtual const ::Color&        GetCanonicalTextColor( const StyleSettings& _rStyle ) const override;
     void                        ImplAdjustNWFSizes() override;
 
     virtual void ImplDrawCheckBoxState(vcl::RenderContext& rRenderContext);

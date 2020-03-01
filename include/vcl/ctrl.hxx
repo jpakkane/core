@@ -96,7 +96,7 @@ protected:
 
     virtual const vcl::Font&
                 GetCanonicalFont( const StyleSettings& _rStyle ) const;
-    virtual const Color&
+    virtual const ::Color&
                 GetCanonicalTextColor( const StyleSettings& _rStyle ) const;
 
     void ImplInitSettings();

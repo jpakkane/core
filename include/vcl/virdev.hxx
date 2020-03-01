@@ -56,9 +56,9 @@ private:
     bool                mbForceZeroExtleadBug;
 
     SAL_DLLPRIVATE void ImplInitVirDev( const OutputDevice* pOutDev, long nDX, long nDY, const SystemGraphicsData *pData = nullptr );
-    SAL_DLLPRIVATE bool InnerImplSetOutputSizePixel( const Size& rNewSize, bool bErase,
+    SAL_DLLPRIVATE bool InnerImplSetOutputSizePixel( const ::Size& rNewSize, bool bErase,
                                                      sal_uInt8* pBuffer );
-    SAL_DLLPRIVATE bool ImplSetOutputSizePixel( const Size& rNewSize, bool bErase,
+    SAL_DLLPRIVATE bool ImplSetOutputSizePixel( const ::Size& rNewSize, bool bErase,
                                                 sal_uInt8* pBuffer );
 
     VirtualDevice (const VirtualDevice &) = delete;
@@ -150,7 +150,7 @@ public:
         Any rendering will happen directly on the context and not on any intermediate bitmap.
         Note: This might not be supported on all platforms !
      */
-    explicit VirtualDevice(const SystemGraphicsData& rData, const Size &rSize,
+    explicit VirtualDevice(const SystemGraphicsData& rData, const ::Size &rSize,
                            DeviceFormat eFormat);
 
     virtual             ~VirtualDevice() override;
@@ -158,13 +158,13 @@ public:
 
     virtual void        EnableRTL( bool bEnable = true ) override;
 
-    bool                SetOutputSizePixel( const Size& rNewSize, bool bErase = true );
-    bool                SetOutputSizePixelScaleOffsetAndBuffer( const Size& rNewSize,
+    bool                SetOutputSizePixel( const ::Size& rNewSize, bool bErase = true );
+    bool                SetOutputSizePixelScaleOffsetAndBuffer( const ::Size& rNewSize,
                                                                 const Fraction& rScale,
                                                                 const Point& rNewOffset,
                                                                 sal_uInt8* pBuffer);
 
-    bool                SetOutputSize( const Size& rNewSize )
+    bool                SetOutputSize( const ::Size& rNewSize )
                             { return SetOutputSizePixel( LogicToPixel( rNewSize ) ); }
 
     void                SetReferenceDevice( RefDevMode );

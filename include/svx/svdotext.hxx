@@ -109,7 +109,7 @@ class ImpSdrObjTextLinkUserData final : public SdrObjUserData
 
     OUString                    aFileName;   // name of the referenced document
     OUString                    aFilterName; // a filter, if need be
-    DateTime                    aFileDate0;  // avoiding unnecessary reload
+    ::DateTime                    aFileDate0;  // avoiding unnecessary reload
     tools::SvRef<ImpSdrObjTextLink>
                                 pLink;
     rtl_TextEncoding            eCharSet;
@@ -498,7 +498,7 @@ public:
     virtual void NbcReformatText() override;
 
     virtual bool CalcFieldValue(const SvxFieldItem& rField, sal_Int32 nPara, sal_uInt16 nPos,
-        bool bEdit, o3tl::optional<Color>& rpTxtColor, o3tl::optional<Color>& rpFldColor, OUString& rRet) const;
+        bool bEdit, o3tl::optional<::Color>& rpTxtColor, o3tl::optional<::Color>& rpFldColor, OUString& rRet) const;
 
     virtual SdrObjectUniquePtr DoConvertToPolyObj(bool bBezier, bool bAddText) const override;
 

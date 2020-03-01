@@ -65,10 +65,10 @@ public:
         void             SetOffset(long nMinutes)    { m_nOffset = nMinutes; }
         long             GetOffset() const           { return m_nOffset; }
 
-        Date                    GetDate() const;
+        ::Date                    GetDate() const;
         tools::Time             GetTime() const;
-        void                    SetDateTime(const DateTime& rDT);
-        static double           GetDateTime(SwDoc* pDoc, const DateTime& rDT);
+        void                    SetDateTime(const ::DateTime& rDT);
+        static double           GetDateTime(SwDoc* pDoc, const ::DateTime& rDT);
 
         virtual bool            QueryValue( css::uno::Any& rVal, sal_uInt16 nMId ) const override;
         virtual bool            PutValue( const css::uno::Any& rVal, sal_uInt16 nMId ) override;

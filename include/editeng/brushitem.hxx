@@ -43,7 +43,7 @@ enum SvxGraphicPosition
 
 class EDITENG_DLLPUBLIC SvxBrushItem final : public SfxPoolItem
 {
-    Color               aColor;
+    ::Color               aColor;
     sal_Int32           nShadingValue;
     mutable std::unique_ptr<GraphicObject> xGraphicObject;
     sal_Int8            nGraphicTransparency; //contains a percentage value which is
@@ -60,7 +60,7 @@ public:
     static SfxPoolItem* CreateDefault();
 
     explicit SvxBrushItem( sal_uInt16 nWhich );
-    SvxBrushItem( const Color& rColor, sal_uInt16 nWhich  );
+    SvxBrushItem( const ::Color& rColor, sal_uInt16 nWhich  );
 
     SvxBrushItem( const Graphic& rGraphic,
                   SvxGraphicPosition ePos, sal_uInt16 nWhich );
@@ -88,9 +88,9 @@ public:
 
     virtual SvxBrushItem*    Clone( SfxItemPool *pPool = nullptr ) const override;
 
-    const Color&    GetColor() const                { return aColor; }
-    Color&          GetColor()                      { return aColor; }
-    void            SetColor( const Color& rCol)    { aColor = rCol; }
+    const ::Color&    GetColor() const                { return aColor; }
+    ::Color&          GetColor()                      { return aColor; }
+    void            SetColor( const ::Color& rCol)    { aColor = rCol; }
 
     SvxGraphicPosition  GetGraphicPos() const       { return eGraphicPos; }
 

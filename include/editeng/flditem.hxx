@@ -113,12 +113,12 @@ public:
     virtual sal_Int32  GetClassId() const override { return CLASS_ID; }
 
                             SvxDateField();
-    explicit                SvxDateField( const Date& rDate,
+    explicit                SvxDateField( const ::Date& rDate,
                                 SvxDateType eType,
                                 SvxDateFormat eFormat = SvxDateFormat::StdSmall );
 
     sal_Int32               GetFixDate() const { return nFixDate; }
-    void                    SetFixDate( const Date& rDate ) { nFixDate = rDate.GetDate(); }
+    void                    SetFixDate( const ::Date& rDate ) { nFixDate = rDate.GetDate(); }
 
     SvxDateType             GetType() const { return eType; }
     void                    SetType( SvxDateType eTp ) { eType = eTp; }
@@ -129,7 +129,7 @@ public:
                             // If eLanguage==LANGUAGE_DONTKNOW the language/country
                             // used in number formatter initialization is taken.
     OUString                GetFormatted( SvNumberFormatter& rFormatter, LanguageType eLanguage ) const;
-    static OUString         GetFormatted( Date const & rDate, SvxDateFormat eFormat, SvNumberFormatter& rFormatter, LanguageType eLanguage );
+    static OUString         GetFormatted( ::Date const & rDate, SvxDateFormat eFormat, SvNumberFormatter& rFormatter, LanguageType eLanguage );
 
     virtual std::unique_ptr<SvxFieldData> Clone() const override;
     virtual bool            operator==( const SvxFieldData& ) const override;
@@ -427,7 +427,7 @@ public:
     virtual sal_Int32  GetClassId() const override { return CLASS_ID; }
     SvxDateTimeField();
 
-    static OUString    GetFormatted( Date const & rDate, tools::Time const & rTime,
+    static OUString    GetFormatted( ::Date const & rDate, tools::Time const & rTime,
                                      SvxDateFormat eDateFormat, SvxTimeFormat eTimeFormat,
                                      SvNumberFormatter& rFormatter, LanguageType eLanguage );
 

@@ -28,8 +28,8 @@
 struct ImpSwapInfo
 {
     MapMode     maPrefMapMode;
-    Size        maPrefSize;
-    Size        maSizePixel;
+    ::Size        maPrefSize;
+    ::Size        maSizePixel;
 
     bool mbIsAnimated;
     bool mbIsEPS;
@@ -115,7 +115,7 @@ public:
     ImpGraphic( const GDIMetaFile& rMtf );
     ~ImpGraphic();
 
-    void ImplSetPrepared(bool bAnimated, const Size* pSizeHint);
+    void ImplSetPrepared(bool bAnimated, const ::Size* pSizeHint);
 
 private:
 
@@ -169,10 +169,10 @@ private:
     Animation           ImplGetAnimation() const;
     const GDIMetaFile&  ImplGetGDIMetaFile() const;
 
-    Size                ImplGetSizePixel() const;
+    ::Size                ImplGetSizePixel() const;
 
-    Size                ImplGetPrefSize() const;
-    void                ImplSetPrefSize( const Size& rPrefSize );
+    ::Size                ImplGetPrefSize() const;
+    void                ImplSetPrefSize( const ::Size& rPrefSize );
 
     MapMode             ImplGetPrefMapMode() const;
     void                ImplSetPrefMapMode( const MapMode& rPrefMapMode );
@@ -183,11 +183,11 @@ private:
                                   const Point& rDestPt ) const;
     void                ImplDraw( OutputDevice* pOutDev,
                                   const Point& rDestPt,
-                                  const Size& rDestSize ) const;
+                                  const ::Size& rDestSize ) const;
 
     void                ImplStartAnimation( OutputDevice* pOutDev,
                                             const Point& rDestPt,
-                                            const Size& rDestSize,
+                                            const ::Size& rDestSize,
                                             long nExtraData,
                                             OutputDevice* pFirstFrameOutDev );
     void                ImplStopAnimation( OutputDevice* pOutputDevice,

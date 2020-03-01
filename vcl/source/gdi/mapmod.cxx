@@ -65,11 +65,11 @@ bool MapMode::ImplMapMode::operator==( const ImplMapMode& rImpMapMode ) const
 
 namespace
 {
-    struct theGlobalDefault :
-        public rtl::Static< MapMode::ImplType, theGlobalDefault > {};
+    struct theGlobalDefault2 :
+        public rtl::Static< MapMode::ImplType, theGlobalDefault2 > {};
 }
 
-MapMode::MapMode() : mpImplMapMode(theGlobalDefault::get())
+MapMode::MapMode() : mpImplMapMode(theGlobalDefault2::get())
 {
 }
 
@@ -130,7 +130,7 @@ bool MapMode::operator==( const MapMode& rMapMode ) const
 
 bool MapMode::IsDefault() const
 {
-    return mpImplMapMode.same_object(theGlobalDefault::get());
+    return mpImplMapMode.same_object(theGlobalDefault2::get());
 }
 
 SvStream& ReadMapMode( SvStream& rIStm, MapMode& rMapMode )

@@ -48,7 +48,7 @@ enum class MtfConversion
 };
 
 
-typedef Color (*ColorExchangeFnc)( const Color& rColor, const void* pColParam );
+typedef ::Color (*ColorExchangeFnc)( const ::Color& rColor, const void* pColParam );
 typedef BitmapEx (*BmpExchangeFnc)( const BitmapEx& rBmpEx, const void* pBmpParam );
 
 VCL_DLLPUBLIC SvStream& ReadGDIMetaFile(SvStream& rIStm, GDIMetaFile& rGDIMetaFile, ImplMetaReadData* pReadData = nullptr);
@@ -61,7 +61,7 @@ private:
     size_t          m_nCurrentActionElement;
 
     MapMode         m_aPrefMapMode;
-    Size            m_aPrefSize;
+    ::Size            m_aPrefSize;
     GDIMetaFile*    m_pPrev;
     GDIMetaFile*    m_pNext;
     VclPtr<OutputDevice> m_pOutDev;
@@ -70,33 +70,33 @@ private:
     bool            m_bUseCanvas;
 
 
-    SAL_DLLPRIVATE static Color         ImplColAdjustFnc( const Color& rColor, const void* pColParam );
+    SAL_DLLPRIVATE static ::Color         ImplColAdjustFnc( const ::Color& rColor, const void* pColParam );
     SAL_DLLPRIVATE static BitmapEx      ImplBmpAdjustFnc( const BitmapEx& rBmpEx, const void* pBmpParam );
 
-    SAL_DLLPRIVATE static Color         ImplColConvertFnc( const Color& rColor, const void* pColParam );
+    SAL_DLLPRIVATE static ::Color         ImplColConvertFnc( const ::Color& rColor, const void* pColParam );
     SAL_DLLPRIVATE static BitmapEx      ImplBmpConvertFnc( const BitmapEx& rBmpEx, const void* pBmpParam );
 
-    SAL_DLLPRIVATE static Color         ImplColMonoFnc( const Color& rColor, const void* pColParam );
+    SAL_DLLPRIVATE static ::Color         ImplColMonoFnc( const ::Color& rColor, const void* pColParam );
     SAL_DLLPRIVATE static BitmapEx      ImplBmpMonoFnc( const BitmapEx& rBmpEx, const void* pBmpParam );
 
-    SAL_DLLPRIVATE static Color         ImplColReplaceFnc( const Color& rColor, const void* pColParam );
+    SAL_DLLPRIVATE static ::Color         ImplColReplaceFnc( const ::Color& rColor, const void* pColParam );
     SAL_DLLPRIVATE static BitmapEx      ImplBmpReplaceFnc( const BitmapEx& rBmpEx, const void* pBmpParam );
 
     SAL_DLLPRIVATE void                 ImplExchangeColors( ColorExchangeFnc pFncCol, const void* pColParam,
                                                             BmpExchangeFnc pFncBmp, const void* pBmpParam );
 
     SAL_DLLPRIVATE static Point         ImplGetRotatedPoint( const Point& rPt, const Point& rRotatePt,
-                                                             const Size& rOffset, double fSin, double fCos );
+                                                             const ::Size& rOffset, double fSin, double fCos );
     SAL_DLLPRIVATE static tools::Polygon ImplGetRotatedPolygon( const tools::Polygon& rPoly, const Point& rRotatePt,
-                                                               const Size& rOffset, double fSin, double fCos );
+                                                               const ::Size& rOffset, double fSin, double fCos );
     SAL_DLLPRIVATE static tools::PolyPolygon ImplGetRotatedPolyPolygon( const tools::PolyPolygon& rPoly, const Point& rRotatePt,
-                                                                   const Size& rOffset, double fSin, double fCos );
+                                                                   const ::Size& rOffset, double fSin, double fCos );
     SAL_DLLPRIVATE static void          ImplAddGradientEx( GDIMetaFile& rMtf,
                                                            const OutputDevice& rMapDev,
                                                            const tools::PolyPolygon& rPolyPoly,
                                                            const Gradient& rGrad );
 
-    SAL_DLLPRIVATE bool                 ImplPlayWithRenderer( OutputDevice* pOut, const Point& rPos, Size rLogicDestSize );
+    SAL_DLLPRIVATE bool                 ImplPlayWithRenderer( OutputDevice* pOut, const Point& rPos, ::Size rLogicDestSize );
 
     void                                Linker( OutputDevice* pOut, bool bLink );
 
@@ -133,10 +133,10 @@ public:
                             bool bInvert = false, bool msoBrightness = false );
 
     void            Convert( MtfConversion eConversion );
-    void            ReplaceColors( const Color* pSearchColors, const Color* rReplaceColors,
+    void            ReplaceColors( const ::Color* pSearchColors, const ::Color* rReplaceColors,
                                    sal_uLong nColorCount );
 
-    GDIMetaFile     GetMonochromeMtf( const Color& rCol ) const;
+    GDIMetaFile     GetMonochromeMtf( const ::Color& rCol ) const;
 
     void            Record( OutputDevice* pOutDev );
     bool            IsRecord() const { return m_bRecord; }
@@ -144,7 +144,7 @@ public:
     void            Play( GDIMetaFile& rMtf );
     void            Play( OutputDevice* pOutDev, size_t nPos = GDI_METAFILE_END );
     void            Play( OutputDevice* pOutDev, const Point& rPos,
-                          const Size& rSize );
+                          const ::Size& rSize );
 
     void            Pause( bool bPause );
     bool            IsPause() const { return m_bPause; }
@@ -170,8 +170,8 @@ public:
     MetaAction*     GetAction( size_t nAction ) const;
     MetaAction*     GetCurAction() const { return GetAction( m_nCurrentActionElement ); }
 
-    const Size&     GetPrefSize() const { return m_aPrefSize; }
-    void            SetPrefSize( const Size& rSize ) { m_aPrefSize = rSize; }
+    const ::Size&     GetPrefSize() const { return m_aPrefSize; }
+    void            SetPrefSize( const ::Size& rSize ) { m_aPrefSize = rSize; }
 
     const MapMode&  GetPrefMapMode() const { return m_aPrefMapMode; }
     void            SetPrefMapMode( const MapMode& rMapMode ) { m_aPrefMapMode = rMapMode; }

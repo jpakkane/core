@@ -701,6 +701,7 @@ sw_lib = shared_library('sw',
   include_directories: [main_inc, udkh_inc, offapi_inc, oovbaapi_inc, 'inc', 'source/core/inc', 'source/uibase/inc', 'source/filter/inc', setup_inc],
   link_with: [avmedia_lib, basegfx_lib, comphelper_lib, cppuhelper_lib, cppu_lib, dbtools_lib, drawinglayer_lib, editeng_lib, i18nlangtag_lib, i18nutil_lib, lng_lib, msfilter_lib, salhelper_lib, sal_lib, sax_lib, sb_lib, sfx_lib, sot_lib, svl_lib, svt_lib, svxcore_lib, svx_lib, tk_lib, tl_lib, ucbhelper_lib, utl_lib, vbahelper_lib, vcl_lib, xmlreader_lib, xo_lib],
   dependencies: [icuuc_dep, libxml_dep],
+  override_options: ['unity=on'],
 )
 
 swui_lib = shared_library('swui',
@@ -929,5 +930,4 @@ vbaswobj_lib = shared_library('vbaswobj',
   include_directories: [main_inc, udkh_inc, offapi_inc, oovbaapi_inc, 'inc'],
   link_with: [comphelper_lib, cppu_lib, cppuhelper_lib, editeng_lib, i18nlangtag_lib, sal_lib, sb_lib, sfx_lib, svl_lib, svt_lib, svx_lib, svxcore_lib, sw_lib, tk_lib, tl_lib, utl_lib, vbahelper_lib, vcl_lib],
   dependencies: [libxml_dep],
-
 )

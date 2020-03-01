@@ -110,7 +110,7 @@ namespace com::sun::star::text {
 }
 
 const char sServiceName[] = "com.sun.star.text.AccessibleParagraphView";
-const char sImplementationName[] = "com.sun.star.comp.Writer.SwAccessibleParagraphView";
+const char sImplementationName2[] = "com.sun.star.comp.Writer.SwAccessibleParagraphView";
 
 OUString const & SwAccessibleParagraph::GetString()
 {
@@ -870,7 +870,7 @@ sal_Int32 SAL_CALL SwAccessibleParagraph::getBackground()
 
 OUString SAL_CALL SwAccessibleParagraph::getImplementationName()
 {
-    return sImplementationName;
+    return sImplementationName2;
 }
 
 sal_Bool SAL_CALL SwAccessibleParagraph::supportsService(

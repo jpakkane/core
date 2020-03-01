@@ -557,7 +557,7 @@ public:
                           const bool bLowerBorder = false,
                           const bool bOnlyTextBackground = false ) const;
     void PaintBorderLine( const SwRect&, const SwRect&, const SwPageFrame*,
-                          const Color *pColor,
+                          const ::Color *pColor,
                           const SvxBorderLineStyle = SvxBorderLineStyle::SOLID ) const;
 
     std::unique_ptr<drawinglayer::processor2d::BaseProcessor2D> CreateProcessor2D( ) const;
@@ -569,7 +569,7 @@ public:
     bool GetBackgroundBrush(
         drawinglayer::attribute::SdrAllFillAttributesHelperPtr& rFillAttributes,
         const SvxBrushItem*& rpBrush,
-        const Color*& rpColor,
+        const ::Color*& rpColor,
         SwRect &rOrigRect,
         bool bLowerMode,
         bool bConsiderTextBox ) const;

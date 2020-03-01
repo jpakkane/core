@@ -17,6 +17,8 @@
  *   the License at http://www.apache.org/licenses/LICENSE-2.0 .
  */
 
+#pragma once
+
 #include <vcl/vclenum.hxx>
 #include <vcl/glyphitem.hxx>
 #include <vcl/image.hxx>

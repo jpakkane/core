@@ -15,7 +15,7 @@ namespace vcl::test
 {
 namespace
 {
-void drawPolyLineOffset(OutputDevice& rDevice, tools::Rectangle const& rRect, int nOffset)
+void drawPolyLineOffset2(OutputDevice& rDevice, tools::Rectangle const& rRect, int nOffset)
 {
     basegfx::B2DPolygon aPolygon{
         basegfx::B2DPoint(rRect.Left() + nOffset, rRect.Top() + nOffset),
@@ -48,8 +48,8 @@ Bitmap OutputDeviceTestPolyLineB2D::setupRectangle(bool bEnableAA)
     mpVirtualDevice->SetLineColor(constLineColor);
     mpVirtualDevice->SetFillColor();
 
-    drawPolyLineOffset(*mpVirtualDevice, maVDRectangle, 2);
-    drawPolyLineOffset(*mpVirtualDevice, maVDRectangle, 5);
+    drawPolyLineOffset2(*mpVirtualDevice, maVDRectangle, 2);
+    drawPolyLineOffset2(*mpVirtualDevice, maVDRectangle, 5);
 
     return mpVirtualDevice->GetBitmapEx(maVDRectangle.TopLeft(), maVDRectangle.GetSize())
         .GetBitmap();
